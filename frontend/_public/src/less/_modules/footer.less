@@ -1,0 +1,63 @@
+.footer-main {
+	border: 0;
+	padding-top: 40px;
+
+	.jj--footer-newsletter {
+		text-align: center;
+		.column--content {
+			display: block !important;
+			p {
+				margin-bottom: 10px;
+				.unitize(font-size, 14);
+			}
+			.newsletter--form {
+				width: 400px;
+				max-width: 90%;
+				margin: 0px auto;
+				.newsletter--field,
+				.newsletter--button {
+					border-radius: 0px;
+					background: none;
+					background-color: #fff;
+					box-shadow: none;
+					height: 50px;
+					i {
+						font-size: 18px;
+					}
+					&:hover {
+						color: @brand-primary;
+					}
+				}
+			}
+		}
+	}
+
+	.jj--footer-menu {
+		margin: 20px auto 0px;
+		nav {
+			ul {
+				text-align: center;
+				li {
+					display: inline-block;
+					@media screen and (max-width: @tabletViewportWidth) {
+						display: block;
+					} 
+					a {
+						text-transform: uppercase;
+						padding: 10px 30px !important;
+						color: @gray;
+						.unitize(font-size, 14);
+					}
+				}
+			}
+		}
+	}
+
+	.footer--bottom {
+		padding: 20px;
+		text-align: left;
+		color: @gray;
+		.unitize(font-size, 10);
+	}
+
+}

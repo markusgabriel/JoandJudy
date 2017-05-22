@@ -1,0 +1,65 @@
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	border-radius: 0;
+	background: none;
+	background-color: transparent;
+	border: 1px solid @gray;
+	height: 50px;
+	text-transform: none;
+	color: @text-color;
+	box-shadow: none;
+}
+
+.js--fancy-select {
+	border-radius: 0;
+	height: 50px;
+	line-height: 50px;
+	border: 1px solid @gray;
+	color: @text-color;
+	background: none;
+	background-color: transparent;
+	.js--fancy-select-text {
+		text-transform: none;
+		color: @text-color;
+	}
+	.js--fancy-select-trigger {
+		width: 50px;
+		i {
+			font-size: 8px;
+		}
+	}
+}
+
+select {
+	.clear-select();
+}
+
+input[type="checkbox"] {
+	.clear-select();
+	+ label {
+		padding-left: 30px;
+		position: relative;
+		height: 20px;
+		line-height: 20px;
+		display: block;
+		text-transform: none;
+		font-weight: 300;
+		&:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 18px;
+			height: 18px;
+			border: 1px solid @gray;
+		}
+	}
+	&:checked {
+		+ label {
+			&:before {
+				background-color: @gray-light;
+			}
+		}
+	}
+}

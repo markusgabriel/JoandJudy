@@ -1,0 +1,224 @@
+header.header-main {
+	width: 100%;
+	height: 60px;
+	padding: 0px;
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	background-color: #fff;
+	z-index: 9998;
+	border-bottom: 1px solid @gray-light;
+
+	.jj--logo-link {
+		background-image: url(../../img/jj_logo.svg);
+		text-indent: -9999px;
+		width: 118px;
+		height: 18px;
+		background-repeat: no-repeat;
+		background-size: 118px 18px;
+		display: block;
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		margin-left: -59px;
+		z-index: 9999;
+	}
+
+	.jj--menu-open {
+		width:30px;
+	  height: 30px;
+	  //@include transform(rotate(0deg));
+	  //@include transition(ease-out .5s);
+	  cursor: pointer;
+		position: absolute;
+		top: 18px;
+		left: 20px;
+		cursor: pointer;
+		z-index: 10000;
+		span {
+			display: block;
+		  position: absolute;
+		  height: 2px;
+		  width: 100%;
+		  opacity: 1;
+		  left: 0;
+		  background-color: @brand-primary;
+		  transform: rotate(0deg);
+		  transition: all .25s ease-in-out;
+		  &:nth-child(1) {
+		  	top: 0px;
+		  }
+		  &:nth-child(2) {
+		  	top: 10px;
+		  }
+		  &:nth-child(3) {
+		  	top: 10px;
+		  }
+		  &:nth-child(4) {
+		  	top: 20px;
+		  }
+		}
+		&.jj--menu-close {
+			span {
+				&:nth-child(1) {
+					top: 10px;
+		  		width: 0%;
+		  		left: 50%;
+				}
+				&:nth-child(2) {
+					transform: rotate(45deg);
+				}
+				&:nth-child(3) {
+					transform: rotate(-45deg);
+				}
+				&:nth-child(4) {
+					top: 10px;
+				  width: 0%;
+				  left: 50%;
+				}
+			}
+			&:hover {
+				span {
+					&:nth-child(2) {
+						transform: rotate(135deg);
+					}
+					&:nth-child(3) {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+	}
+
+	.jj--language-switch {
+		display: none;
+		@media screen and (min-width: @tabletViewportWidth) {
+			display: block;
+			position: absolute;
+			top: 20px;
+			left: 70px;
+			.js--fancy-select {
+		    border-radius: 0px;
+		    background: none;
+		    box-sizing: border-box;
+		    width: 120px;
+		    line-height: 100%;
+		    background-color: transparent;
+		    background-image: none;
+		    display: inline-block;
+		    position: relative;
+		    border: 0px;
+		    overflow: hidden;
+		    cursor: pointer;
+		    text-align: left;
+		    color: @brand-primary;
+		    .js--fancy-select-text {
+		    	text-transform: uppercase;
+		    }
+		    .js--fancy-select-trigger {
+		    	border: 0;
+		    }
+			}
+		}
+	}
+
+	.jj--shop-navigation {
+		text-align: right;
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		li {
+			line-height: 60px;
+			padding: 0px 20px;
+			display: inline-block;
+			text-transform: uppercase;
+			color: @brand-primary;
+		}
+	}
+
+	@media screen and (min-width: @tabletViewportWidth) {
+		position: relative;
+		max-width: 1260px;
+		margin: 0px auto;
+	}
+
+}
+
+.is--ctl-checkout.is--minimal-header,
+.is--ctl-register.is--minimal-header .header-main,
+.is--ctl-register.is--minimal-header.is--target-checkout .header-main {
+	box-shadow: none !important;
+	border: 0 !important;
+}
+.is--ctl-checkout.is--minimal-header .header-main, .is--ctl-register.is--minimal-header .header-main, .is--ctl-register.is--minimal-header.is--target-checkout .header-main {box-shadow: none;}
+
+
+@media screen and (max-width: @phoneLandscapeViewportWidth) {
+	.jj--login-link,
+	.jj--search-link {
+		display: none !important;
+	}
+}
+
+.jj--flyout-navigation-wrapper {
+	width: 100%;
+	max-width: 1260px;
+	margin: 0 auto;
+	position: relative;
+	.jj--flyout-navigation {
+		box-sizing: border-box;
+		position: fixed;
+		top: 60px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		width: 100%;
+		z-index: 9997;
+		padding: 60px 20px;
+		background-color: #fff;
+		transform: translateY(-100%);
+		transition: all 0.3s ease-out;
+		&.is-active {
+			transform: translateY(0);
+		}
+		.jj--navigation-main {
+			border: 0px;
+			ul {
+				text-align: center;
+				li {
+					display: block;
+					.navigation--link {
+						text-align: center;
+						color: @brand-primary;
+						display: block;
+						padding: 10px;
+						&:hover {
+							color: @gray-dark;
+						}
+					}
+					&.is--active {
+						.navigation--link {
+							background-color: transparent;
+							&:hover {
+								color: @gray-dark;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (min-width: @tabletViewportWidth) {
+		.jj--flyout-navigation {
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			bottom: auto;
+			right: auto;
+			width: 300px;
+		}
+	}
+}
+

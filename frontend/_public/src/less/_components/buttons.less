@@ -1,0 +1,52 @@
+/*
+Buttons
+===================================================================
+######Basic button layout
+
+Creates a basic button. Button type classes can be added by using multiple classes on the `.btn` element.
+
+Adding the class `is--disabled` changes the element to a disabled button.
+```
+<button class="btn">
+    Basic button
+</button>
+
+<button class="btn is--disabled">
+    Disabled button
+</button>
+```
+*/
+
+.btn {
+    
+    .unitize(line-height, 50);
+    border-radius: 0;
+    .appearance();
+    .unitize(font-size, 14);
+    background: none;
+    -webkit-font-smoothing: inherit;
+    display: inline-block;
+    position: relative;
+    font-weight: normal;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid @gray;
+    color: @text-color;
+    height: 50px;
+    line-height: 50px;
+    transition: all 0.3s;
+    padding: 0 30px !important;
+
+    &:hover {
+        background-color: @brand-primary;
+        color: #ffffff;
+    }
+
+    &.is--large,
+    &.is--small {
+        height: 50px;
+        line-height: 50px;
+    }
+}

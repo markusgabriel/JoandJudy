@@ -1,0 +1,284 @@
+.content--checkout {
+	width: 100%;
+	max-width: 1260px;
+	margin: 80px auto 0px;
+	display: block;
+	float: none;
+	h1 {
+		text-align: center;
+		text-transform: uppercase;
+		font-weight: 300;
+		color: @gray;
+	}
+}
+
+.product--table .row--product .column--actions {float: left; padding: 0 20px 0 0; text-align: left;}
+.product--table .table--header {margin: 0;}
+.product--table .table--header .panel--th {text-transform: uppercase; font-weight: 300; letter-spacing: 1px; .unitize(font-size, 14);}
+.product--table .table--tr .column--actions .column--actions-link {border: 0; padding: 10px !important;}
+.product--table .panel--body {border: 0;}
+.product--table .basket--footer {border: 0; background-color: transparent;}
+.product--table .table--media .table--media-outer {border: 0;}
+.product--table .table--media img {padding: 0;}
+.product--table .content--title {font-weight: 300; letter-spacing: 1px; line-height: 100%;}
+.product--table .is--no-star {margin-left: 0 !important;}
+
+.table--aggregation,
+.product--table .table--aggregation {
+	background-color: transparent;
+	border: 0;
+}
+.aggregation--list {
+	background-color: transparent;
+	border: 0;
+	li {
+		text-transform: uppercase;
+		padding: 10px;
+		border-bottom: 1px solid @gray-light;
+	}
+	@media screen and (max-width: @tabletViewportWidth) {
+		padding-left: 10px;
+		padding-right: 10px;
+		li {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.confirm--content .product--table .basket--footer {background-color: transparent;}
+
+.product--table .column--quantity .js--fancy-select {
+	border-radius: 0;
+	background: none;
+	text-align: center;
+	height: 40px;
+	width: 40px;
+	font-weight: normal;
+	border: 1px solid @gray;
+	.js--fancy-select-text {
+		width: 40px;
+		height: 40px;
+		line-height: 40px;
+		.unitize(font-size, 20);
+		font-weight: normal;
+		display: inline-block;
+		vertical-align: baseline;
+		text-indent: 2px;
+		color: @gray;
+	}
+	.js--fancy-select-trigger {
+		border: 0;
+		display: none;
+		i {
+			display: none;
+		}
+	}
+}
+
+.steps--container {
+	.steps--content {
+		border: 0;
+		padding: 20px;
+		.steps--list {
+			.flex-display();
+			.align-items(stretch);
+			.steps--entry  {
+				.flex(1 1 auto);
+				display: inline-block;
+				padding: 0;
+				text-align: center;
+				&:first-child {
+					text-align: left;
+				}
+				&:last-child {
+					text-align: right;
+				}
+				.icon {
+					display: none;
+				}
+				.text {
+					text-transform: uppercase;
+					font-weight: 300;
+					color: @text-color;
+					display: inline-block;
+					height: auto;
+					margin: 0;
+					width: auto;
+				}
+				&.is--active {
+					.text {
+						color: @brand-primary;
+						border-bottom: 1px solid @brand-primary;
+					}
+				}
+				&.steps--spacer {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+.register--content,
+.register--login,
+.confirm--content {
+	.panel {
+		.panel--title {
+			margin: 0;
+			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: 1px;
+		}
+		.panel--body {
+			padding: 20px 0;
+		}
+	}
+	.register--required-info {
+		margin: 20px 0;
+	}
+	.register--action {
+		margin: 20px 0;
+	}
+}
+
+.register--content .register--check {
+	position: relative;
+	height: 40px;
+	padding: 10px 0;
+	input {
+		position: absolute;
+		top: 10px;
+		left: 0;
+	}
+}
+
+.register--login {
+	.register--new-customer {
+		.new-customer-btn {
+			padding-right: 0;
+		}
+	}
+	.register--existing-customer {
+		.panel--title {
+			margin: 0;
+			text-transform: uppercase;
+			font-weight: 300;
+			letter-spacing: 1px;
+		}
+		.panel--body {
+			padding: 20px 0;
+		}
+	}
+}
+
+.panel--actions.is--wide {
+	padding: 20px 0;
+}
+
+.confirm--content .product--table .basket--footer .aggregation--list {
+	padding: 20px;
+}
+
+@media screen and (max-width: @tabletViewportWidth) {
+	.product--table .row--product .column--actions {
+		float: right; 
+		padding: 0 0 0 0; 
+		text-align: right;
+	}
+	.product--table .table--media .table--media-outer {
+		margin: 0;
+	}
+	.product--table .column--quantity, 
+	.product--table .column--unit-price, 
+	.product--table .column--total-price, 
+	.product--table .column--tax-price {
+		width: 50%;
+		margin: 0;
+	}
+	.product--table .column--total-price {
+		height: 40px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 300;
+    color: @gray;
+	}
+	.product--table .column--quantity {
+		text-align: left !important;
+		padding-left: 0;
+	}
+	.product--table .column--label.quantity--label,
+	.product--table .column--label.total-price--label {
+		display: none;
+	}
+	.product--table .column--quantity .js--fancy-select {
+		min-width: 70px;
+		text-indent: 8px;
+	}
+
+	.steps--container {
+		margin-top: 60px;
+	}
+}
+
+@media screen and (min-width: @tabletViewportWidth) {
+	.product--table .column--unit-price, .product--table .column--total-price {width: 17%;}
+	.product--table .table--actions {padding: 0 20px;}
+	.product--table .table--actions .btn--checkout-proceed {width: 48%;}
+	.confirm--content .product--table .basket--footer .aggregation--list {padding: 20px;}
+	.confirm--content .product--table .column--product {width: 55%;}
+	.confirm--content .main--actions .btn {width: 48%;}
+	.product--table .table--actions {padding: 0;}
+}
+
+@media screen and (min-width: @desktopViewportWidth) {
+	.content--checkout {margin: 0px auto;}
+	.product--table .row--product .column--actions {width: 8%;}
+	.product--table .column--product .column--image {width: 15%;}
+	.product--table .column--product .table--content {width: 55%}
+	.product--table .aggregation--list {padding-right: 20px;}
+	.product--table .column--product {.flex-display(); .align-items(center);}
+}
+
+.product--table .paypal-express--container:first-child {display: none;}
+div.amazon_button_cart_action.amazon_vs_paypal:first-child {display: none !important;}
+
+div.amazon_button_cart_action.amazon_vs_paypal {
+  float: none !important;
+  height: 45px;
+  display: block;
+  margin: -50px 0px 0px 0px;
+  margin: 0;
+  text-align: center;
+  img {
+		margin: 0 auto;
+		float: none;
+  }
+}
+
+.paypal-express--container {
+  float: none;
+  width: 100%;
+  text-align: center;
+  .paypal-express {
+    float: none;
+    margin: 0 auto;
+    text-align: center;
+    .paypal-express--btn {
+	    width: 170px;
+	    width: 10.625rem;
+	    height: 32px;
+	    height: 2rem;
+	    display: block;
+	    float: none;
+	    margin: 0 auto;
+	    img {
+		    display: block;
+		    max-width: 100%;
+		    max-height: 100%;
+		    height: auto;
+		    margin: 0 auto;
+			}
+		}
+	}
+}

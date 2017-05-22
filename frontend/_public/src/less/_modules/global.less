@@ -1,0 +1,45 @@
+body {
+	&.menu-open {
+		&:after {
+			content: "";
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: @gray-dark;
+			opacity: 0;
+			transition: all 0.3s;
+		}
+	}
+}
+
+.content-main {
+	box-shadow: none;
+	max-width: none;
+	margin-top: 0px;
+	.content-main--inner {
+		max-width: 1260px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+}
+
+@media screen and (max-width: @tabletViewportWidth) {
+	.content-main--inner {
+		padding: 0 20px;
+	}
+}
+
+.content--breadcrumb {
+	max-width: 1260px;
+	margin: 0px auto;
+	padding: 0 10px;
+	border-bottom: 1px solid @gray-light;
+}
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+	.jj--on-mobile {
+		display: none;
+	}
+}
