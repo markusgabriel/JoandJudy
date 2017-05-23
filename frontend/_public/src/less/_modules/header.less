@@ -11,137 +11,173 @@ header.header-main {
 	z-index: 9998;
 	border-bottom: 1px solid @gray-light;
 
-	.jj--logo-link {
-		background-image: url(../../img/jj_logo.svg);
-		text-indent: -9999px;
-		width: 118px;
-		height: 18px;
-		background-repeat: no-repeat;
-		background-size: 118px 18px;
-		display: block;
-		position: absolute;
-		top: 20px;
-		left: 50%;
-		margin-left: -59px;
-		z-index: 9999;
-	}
+	.inner {
 
-	.jj--menu-open {
-		width:30px;
-	  height: 30px;
-	  //@include transform(rotate(0deg));
-	  //@include transition(ease-out .5s);
-	  cursor: pointer;
-		position: absolute;
-		top: 18px;
-		left: 20px;
-		cursor: pointer;
-		z-index: 10000;
-		span {
-			display: block;
-		  position: absolute;
-		  height: 2px;
-		  width: 100%;
-		  opacity: 1;
-		  left: 0;
-		  background-color: @brand-primary;
-		  transform: rotate(0deg);
-		  transition: all .25s ease-in-out;
-		  &:nth-child(1) {
-		  	top: 0px;
-		  }
-		  &:nth-child(2) {
-		  	top: 10px;
-		  }
-		  &:nth-child(3) {
-		  	top: 10px;
-		  }
-		  &:nth-child(4) {
-		  	top: 20px;
-		  }
-		}
-		&.jj--menu-close {
-			span {
-				&:nth-child(1) {
-					top: 10px;
-		  		width: 0%;
-		  		left: 50%;
-				}
-				&:nth-child(2) {
-					transform: rotate(45deg);
-				}
-				&:nth-child(3) {
-					transform: rotate(-45deg);
-				}
-				&:nth-child(4) {
-					top: 10px;
-				  width: 0%;
-				  left: 50%;
-				}
-			}
-			&:hover {
-				span {
-					&:nth-child(2) {
-						transform: rotate(135deg);
-					}
-					&:nth-child(3) {
-						transform: rotate(45deg);
-					}
-				}
-			}
-		}
-	}
-
-	.jj--language-switch {
-		display: none;
-		@media screen and (min-width: @tabletViewportWidth) {
+		.jj--logo-link {
+			background-image: url(../../img/jj_logo.svg);
+			text-indent: -9999px;
+			width: 118px;
+			height: 18px;
+			background-repeat: no-repeat;
+			background-size: 118px 18px;
 			display: block;
 			position: absolute;
 			top: 20px;
-			left: 70px;
-			.js--fancy-select {
-		    border-radius: 0px;
-		    background: none;
-		    box-sizing: border-box;
-		    width: 120px;
-		    line-height: 100%;
-		    background-color: transparent;
-		    background-image: none;
-		    display: inline-block;
-		    position: relative;
-		    border: 0px;
-		    overflow: hidden;
-		    cursor: pointer;
-		    text-align: left;
-		    color: @brand-primary;
-		    .js--fancy-select-text {
-		    	text-transform: uppercase;
-		    }
-		    .js--fancy-select-trigger {
-		    	border: 0;
-		    }
+			left: 50%;
+			margin-left: -59px;
+			z-index: 9999;
+		}
+
+		.jj--menu-open {
+			width: 30px;
+			height: 30px;
+			//@include transform(rotate(0deg));
+			//@include transition(ease-out .5s);
+			cursor: pointer;
+			position: absolute;
+			top: 18px;
+			left: 20px;
+			cursor: pointer;
+			z-index: 10000;
+			span {
+				display: block;
+				position: absolute;
+				height: 2px;
+				width: 100%;
+				opacity: 1;
+				left: 0;
+				background-color: @brand-primary;
+				transform: rotate(0deg);
+				transition: all .25s ease-in-out;
+				&:nth-child(1) {
+					top: 0px;
+				}
+				&:nth-child(2) {
+					top: 10px;
+				}
+				&:nth-child(3) {
+					top: 10px;
+				}
+				&:nth-child(4) {
+					top: 20px;
+				}
+			}
+			&.jj--menu-close {
+				span {
+					&:nth-child(1) {
+						top: 10px;
+						width: 0%;
+						left: 50%;
+					}
+					&:nth-child(2) {
+						transform: rotate(45deg);
+					}
+					&:nth-child(3) {
+						transform: rotate(-45deg);
+					}
+					&:nth-child(4) {
+						top: 10px;
+						width: 0%;
+						left: 50%;
+					}
+				}
+				&:hover {
+					span {
+						&:nth-child(2) {
+							transform: rotate(135deg);
+						}
+						&:nth-child(3) {
+							transform: rotate(45deg);
+						}
+					}
+				}
 			}
 		}
-	}
 
-	.jj--shop-navigation {
-		text-align: right;
-		position: absolute;
-		top: 0px;
-		right: 0px;
-		li {
-			line-height: 60px;
-			padding: 0px 20px;
-			display: inline-block;
-			text-transform: uppercase;
-			color: @brand-primary;
+		.jj--language-switch {
+			display: none;
+			@media screen and (min-width: @tabletViewportWidth) {
+				display: block;
+				position: absolute;
+				top: 20px;
+				left: 70px;
+				.js--fancy-select {
+					border-radius: 0px;
+					background: none;
+					box-sizing: border-box;
+					width: 120px;
+					line-height: 100%;
+					background-color: transparent;
+					background-image: none;
+					display: inline-block;
+					position: relative;
+					border: 0px;
+					overflow: hidden;
+					cursor: pointer;
+					text-align: left;
+					color: @brand-primary;
+					.js--fancy-select-text {
+						text-transform: uppercase;
+					}
+					.js--fancy-select-trigger {
+						border: 0;
+					}
+				}
+			}
 		}
+
+		.shop--navigation {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: auto;
+			height: 60px;
+			padding: 0px;
+			.navigation--list {
+				.navigation--entry {
+					margin: 0px;
+					.btn {
+						padding: 0px 20px;
+						height: 60px;
+						border: 0;
+						i {
+							.unitize(font-size, 16);
+							color: @brand-primary;
+						}
+						&:hover {
+							background-color: transparent;
+							i {
+								color: @text-color;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.jj--shop-navigation {
+			text-align: right;
+			position: absolute;
+			top: 0px;
+			right: 70px;
+			li {
+				line-height: 60px;
+				padding: 0px 20px;
+				display: inline-block;
+				text-transform: uppercase;
+				color: @brand-primary;
+			}
+		}
+
 	}
 
 	@media screen and (min-width: @tabletViewportWidth) {
 		position: relative;
-		max-width: 1260px;
-		margin: 0px auto;
+		.inner {
+			max-width: 1260px;
+			margin: 0px auto;
+			position: relative;
+		}
 	}
 
 }

@@ -72,7 +72,7 @@
                             {/if}
 
                             {if $hasTeaser}
-                                {block name="frontend_plugins_advanced_menu_teaser"}
+                                {*{block name="frontend_plugins_advanced_menu_teaser"}
                                     {if $hasCategories}
                                         <div class="menu--delimiter" style="right: {$columnAmount * 25}%;"></div>
                                     {/if}
@@ -94,7 +94,7 @@
                                             </div>
                                         {/if}
                                     </div>
-                                {/block}
+                                {/block}*}
                             {/if}
                         </div>
                     {/if}
