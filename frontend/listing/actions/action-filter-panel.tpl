@@ -4,7 +4,7 @@
 {block name='frontend_listing_actions_filter'}
 
     {if $facets|count > 0}
-        <div class="action--filter-options off-canvas">
+        <div class="action--filter-options">
 
             {block name='frontend_listing_actions_filter_close_button'}
                 <a href="#" class="filter--close-btn">
@@ -15,29 +15,11 @@
             {block name='frontend_listing_actions_filter_container'}
                 <div class="filter--container">
 
-                    {block name="frontend_listing_actions_filter_active_filters"}
-                        <div class="filter--active-container"
-                             data-reset-label="{s name='ListingFilterResetAll'}{/s}">
-                        </div>
-                    {/block}
-
                     {block name='frontend_listing_actions_filter_form'}
                         <form id="filter"
                               method="get"
                               data-filter-form="true"
                               data-count-ctrl="{$countCtrlUrl}">
-
-                            {block name="frontend_listing_actions_filter_submit_button"}
-                                <div class="filter--actions">
-                                    <button type="submit"
-                                            class="btn is--primary filter--btn-apply is--large is--icon-right"
-                                            disabled="disabled">
-                                        <span class="filter--count"></span>
-                                        {s name="ListingFilterApplyButton"}{/s}
-                                        <i class="icon--cycle"></i>
-                                    </button>
-                                </div>
-                            {/block}
 
                             {block name="frontend_listing_actions_filter_form_page"}
                                 <input type="hidden" name="{$shortParameters['sPage']}" value="1" />
@@ -70,8 +52,28 @@
                             {block name="frontend_listing_actions_filter_form_facets"}
                                 {include file="frontend/listing/actions/action-filter-facets.tpl" facets=$facets}
                             {/block}
+
+                            {block name="frontend_listing_actions_filter_submit_button"}
+                                <div class="filter--actions">
+                                    <button type="submit"
+                                            class="btn is--primary filter--btn-apply is--large is--icon-right"
+                                            disabled="disabled">
+                                        <span class="filter--count"></span>
+                                        {s name="ListingFilterApplyButton"}{/s}
+                                        <i class="icon--cycle"></i>
+                                    </button>
+                                </div>
+                            {/block}
+
                         </form>
                     {/block}
+
+                    {block name="frontend_listing_actions_filter_active_filters"}
+                        <div class="filter--active-container"
+                             data-reset-label="{s name='ListingFilterResetAll'}{/s}">
+                        </div>
+                    {/block}
+
                 </div>
             {/block}
         </div>

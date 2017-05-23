@@ -77,7 +77,7 @@
                                                             <source sizes="{$itemSize}" srcset="{$srcSetRetina}" media="(min-resolution: 192dpi)" />
                                                             <source sizes="{$itemSize}" srcset="{$srcSet}" />
 
-                                                            <img src="{$sArticle.image.thumbnails[0].source}" alt="{$desc|strip_tags|truncate:160}" />
+                                                            <img src="{$sArticle.image.thumbnails[1].source}" alt="{$desc|strip_tags|truncate:160}" />
                                                         </picture>
 
                                                     {elseif $sArticle.image.source}

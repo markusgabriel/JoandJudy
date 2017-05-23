@@ -5,7 +5,7 @@
 {/block}
 
 {block name='frontend_index_content_left'}
-    {include file='frontend/listing/sidebar.tpl'}
+    {*{include file='frontend/listing/sidebar.tpl'}*}
 {/block}
 
 {* Main content *}
@@ -28,9 +28,9 @@
 
         {* Topseller *}
         {block name="frontend_listing_index_topseller"}
-            {if !$hasEmotion && {config name=topSellerActive}}
+            {*{if !$hasEmotion && {config name=topSellerActive}}
                 {action module=widgets controller=listing action=top_seller sCategory=$sCategoryContent.id}
-            {/if}
+            {/if}*}
         {/block}
 
         {* Define all necessary template variables for the listing *}
@@ -58,9 +58,9 @@
 
         {* Tagcloud *}
         {block name="frontend_listing_index_tagcloud"}
-            {if {config name=show namespace=TagCloud }}
+            {*{if {config name=show namespace=TagCloud }}
                 {action module=widgets controller=listing action=tag_cloud sController=listing sCategory=$sCategoryContent.id}
-            {/if}
+            {/if}*}
         {/block}
     </div>
 {/block}

@@ -1,16 +1,21 @@
 {* Listing actions *}
 {block name='frontend_listing_actions_top'}
     <div data-listing-actions="true"
-         class="listing--actions is--rounded{block name='frontend_listing_actions_class'}{/block}">
+         class="jj--sticky-element listing--actions is--rounded{block name='frontend_listing_actions_class'}{/block}">
+
+        <div class="jj--close-filter">
+            <span></span>
+            <span></span>
+        </div>
 
         {* Filter action button *}
         {block name="frontend_listing_actions_filter"}
-            {include file="frontend/listing/actions/action-filter-button.tpl"}
+            {*{include file="frontend/listing/actions/action-filter-button.tpl"}*}
         {/block}
 
         {* Order by selection *}
         {block name='frontend_listing_actions_sort'}
-            {include file="frontend/listing/actions/action-sorting.tpl"}
+            {*{include file="frontend/listing/actions/action-sorting.tpl"}*}
         {/block}
 
         {* Filter options *}
@@ -20,7 +25,7 @@
 
         {* Listing pagination *}
         {block name='frontend_listing_actions_paging'}
-            {include file="frontend/listing/actions/action-pagination.tpl"}
+            {*{include file="frontend/listing/actions/action-pagination.tpl"}*}
         {/block}
 
         {block name="frontend_listing_actions_close"}{/block}

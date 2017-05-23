@@ -15,15 +15,13 @@
                 {/block}
 
                 {block name="frontend_listing_filter_facet_boolean_checkbox"}
-                    <span class="filter-panel--checkbox">
-                        <input type="checkbox"
-                               id="{$facet->getFieldName()|escape:'htmlall'}"
-                               name="{$facet->getFieldName()|escape:'htmlall'}"
-                               value="1"
-                               {if $facet->isActive()}checked="checked" {/if}/>
+                    <input type="checkbox"
+                           id="{$facet->getFieldName()|escape:'htmlall'}"
+                           name="{$facet->getFieldName()|escape:'htmlall'}"
+                           value="1"
+                           {if $facet->isActive()}checked="checked" {/if}/>
 
-                        <span class="checkbox--state">&nbsp;</span>
-                    </span>
+                    <span class="checkbox--state">&nbsp;</span>
                 {/block}
             </div>
         {/block}

@@ -1,3 +1,9 @@
+{* Sorting and changing layout *}
+{block name="frontend_listing_top_actions"}
+    {include file='frontend/listing/listing_actions.tpl'}
+{/block}
+
+
 {* Emotion worlds *}
 {block name="frontend_listing_list_promotion"}
     {if $hasEmotion}
@@ -40,7 +46,7 @@
                     {/if}
                 {/foreach}
 
-                {if !$showListing}
+                {*{if !$showListing}
                     {block name="frontend_listing_list_promotion_link_show_listing"}
                         <div class="emotion--show-listing{if $fullscreen} is--align-center{/if}">
                             <a href="{url controller='cat' sPage=1 sCategory=$sCategoryContent.id}" title="{$sCategoryContent.name|escape}" class="link--show-listing{if $fullscreen} btn is--primary{/if}">
@@ -48,11 +54,15 @@
                             </a>
                         </div>
                     {/block}
-                {/if}
+                {/if}*}
             </div>
         {/block}
+
+        <span class="jj--open-filter">{s namespace="frontend/listing" name='JJFilterOpen'}Filter{/s}</span>
     {/if}
 {/block}
+
+
 
 {* Listing wrapper *}
 {block name="frontend_listing_listing_wrapper"}
@@ -60,7 +70,7 @@
 
         {* Sorting and changing layout *}
         {block name="frontend_listing_top_actions"}
-            {include file='frontend/listing/listing_actions.tpl'}
+            {*{include file='frontend/listing/listing_actions.tpl'}*}
         {/block}
 
         {block name="frontend_listing_listing_container"}

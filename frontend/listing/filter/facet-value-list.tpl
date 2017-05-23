@@ -33,7 +33,6 @@
                                                 <div class="option--container">
 
                                                     {block name="frontend_listing_filter_facet_value_list_input"}
-                                                        <span class="filter-panel--checkbox">
                                                             <input type="checkbox"
                                                                    id="__{$facet->getFieldName()|escape:'htmlall'}__{$option->getId()|escape:'htmlall'}"
                                                                    name="__{$facet->getFieldName()|escape:'htmlall'}__{$option->getId()|escape:'htmlall'}"
@@ -41,7 +40,6 @@
                                                                    {if $option->isActive()}checked="checked" {/if}/>
 
                                                             <span class="checkbox--state">&nbsp;</span>
-                                                        </span>
                                                     {/block}
 
                                                     {block name="frontend_listing_filter_facet_value_list_label"}
