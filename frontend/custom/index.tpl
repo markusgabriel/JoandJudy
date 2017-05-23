@@ -19,6 +19,14 @@
     {include file="frontend/custom/header.tpl"}
 {/block}
 
+{block name="frontend_index_navigation" append}
+    {if $sCustomPage.attribute.jj_page_banner}
+    <div class="jj--page-header-banner">
+        <img src="{$sCustomPage.attribute.jj_page_banner}">
+    </div>
+    {/if}
+{/block}
+
 {* Main content *}
 {block name="frontend_index_content"}
     <div class="custom-page--content content block">
@@ -45,5 +53,5 @@
 
 {* Sidebar left *}
 {block name="frontend_index_content_left"}
-    {include file="frontend/index/sidebar.tpl"}
+    {*{include file="frontend/index/sidebar.tpl"}*}
 {/block}
