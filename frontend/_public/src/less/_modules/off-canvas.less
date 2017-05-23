@@ -1,3 +1,11 @@
+.container--ajax-cart.off-canvas {
+  width: 100%;
+  background-color: transparent;
+  @media screen and (min-width: @tabletViewportWidth) {
+    width: 17.5rem;
+  }
+}
+
 .container--ajax-cart.off-canvas.is--right {
   -webkit-transform: translateX(0);
   -moz-transform: translateX(0);
@@ -9,8 +17,20 @@
   -o-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transform: translateY(-100%);
-  right: 20px;
+  right: 0px;
   top: 0px;
+  @media screen and (min-width: @tabletViewportWidth) {
+    right: 20px;
+  }
+  @media screen and (min-width: @desktopViewportWidth) {
+    right: 5%;
+  }
+  @media screen and (min-width: 1600px) {
+    right: 10%;
+  }
+  @media screen and (min-width: 1920px) {
+    right: 15%;
+  }
 }
 
 .container--ajax-cart.off-canvas.is--open {
@@ -24,5 +44,5 @@
   -o-transform: translateY(0);
   -ms-transform: translateY(0);
   transform: translateY(0);
-  top: 60px;
+  padding-top: 60px;
 }

@@ -1,15 +1,5 @@
 {block name='frontend_checkout_ajax_cart'}
     <div class="ajax--cart">
-        {block name='frontend_checkout_ajax_cart_buttons_offcanvas'}
-            <div class="buttons--off-canvas">
-                {block name='frontend_checkout_ajax_cart_buttons_offcanvas_inner'}
-                    <a href="#close-categories-menu" class="close--off-canvas">
-                        <i class="icon--arrow-left"></i>
-                        {s name="AjaxCartContinueShopping"}{/s}
-                    </a>
-                {/block}
-            </div>
-        {/block}
 
         {block name='frontend_checkout_ajax_cart_alert_box'}
             {if $theme.offcanvasCart}
@@ -64,6 +54,17 @@
                     {/block}
                 </div>
             {/if}
+        {/block}
+
+        {block name='frontend_checkout_ajax_cart_buttons_offcanvas'}
+            <div class="buttons--off-canvas">
+                {block name='frontend_checkout_ajax_cart_buttons_offcanvas_inner'}
+                    <a href="#close-categories-menu" class="close--off-canvas">
+                        <i class="icon--arrow-left"></i>
+                        {s name="AjaxCartContinueShopping"}{/s}
+                    </a>
+                {/block}
+            </div>
         {/block}
 
         {* Basket link *}
