@@ -13,7 +13,7 @@
     {$detailLink=$sBasketItem.linkDetails}
 {/if}
 
-<div class="cart--item{if $basketItem.modus == 1} is--premium-article{elseif $basketItem.modus == 10} is--bundle-article{/if}">
+<div class="cart--item{if $basketItem.modus == 1} is--premium-article{elseif $basketItem.modus == 10} is--bundle-article{elseif $basketItem.modus == 3} is--rebate{/if}">
     {* Article image *}
     {block name='frontend_checkout_ajax_cart_articleimage'}
         <div class="thumbnail--container{if $basketItem.image.thumbnails[0]} has--image{/if}">

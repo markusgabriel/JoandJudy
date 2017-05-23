@@ -63,3 +63,33 @@ input[type="checkbox"] {
 		}
 	}
 }
+
+.range-slider {
+	.range-slider--container {
+		height: 3px;
+		border-radius: 0px;
+		border: 0;
+		background-color: @gray;
+		.range-slider--range-bar{
+			background-color: @brand-primary;
+			.range-slider--handle {
+				.border-radius(100%);
+				background: none;
+				background-color: @gray;
+				border: 0;
+				top: -0.55rem;
+			}
+		}
+	}
+	.filter-panel--range-info {
+		label {
+			color: @gray;
+		}
+		label:first-child {
+			float: left;
+		}
+		label:last-child {
+			float: right;
+		}
+	}
+}

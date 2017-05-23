@@ -8,7 +8,7 @@
  * Generated using the Bootstrap Customizer (http://getbootstrap.com/customize/?id=df5b134f8579e147c36ea7edf400572c)
  * Config saved to config.json and https://gist.github.com/df5b134f8579e147c36ea7edf400572c
  */
-;function ($, window) {
+;function($, window) {
   'use strict';
   var version = $.fn.jquery.split(' ')[0].split('.')
   if ((version[0] < 2 && version[1] < 9) || (version[0] == 1 && version[1] == 9 && version[2] < 1) || (version[0] > 3)) {
@@ -25,7 +25,7 @@
  * ======================================================================== */
 
 
-;function ($, window) {
+;function($, window) {
   'use strict';
 
   // AFFIX CLASS DEFINITION

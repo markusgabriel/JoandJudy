@@ -1,6 +1,6 @@
 {extends file="parent:frontend/index/shop-navigation.tpl"}
 
-<nav class="shop--navigation block-group">
+<nav class="jj--cart-navigation shop--navigation block-group">
     <ul class="navigation--list block-group" role="menubar">
 
         {* Menu (Off canvas left) trigger *}

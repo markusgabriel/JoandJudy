@@ -9,29 +9,24 @@
 		{block name="frontend_detail_tabs_description"}{/block}
 		{block name="frontend_detail_tabs_rating"}{/block}
 
-		{block name="frontend_detail_tabs_scope"}
-			<a href="#" class="tab--link" title="" data-tabName="scope">
-				{s name="DetailTabsScope"}{/s}
+		{block name="frontend_detail_tabs_details"}
+			<a href="#" class="tab--link" title="" data-tabName="details">
+                {s namespace="frontend/detail" name='JJTabsDetailsTitle'}Details{/s}
 			</a>
 		{/block}
 
-		{block name="frontend_detail_tabs_material"}
-			<a href="#" class="tab--link" title="" data-tabName="material">
-				{s name="DetailTabsMaterial"}{/s}
+		{block name="frontend_detail_tabs_size"}
+			<a href="#" class="tab--link" title="" data-tabName="size">
+                {s namespace="frontend/detail" name='JJTabsSizeTitle'}Maße{/s}
 			</a>
 		{/block}
 
-		{block name="frontend_detail_tabs_measures"}
-			<a href="#" class="tab--link" title="" data-tabName="measures">
-				{s name="DetailTabsMeasures"}{/s}
+		{block name="frontend_detail_tabs_shipping"}
+			<a href="#" class="tab--link" title="" data-tabName="shipping">
+                {s namespace="frontend/detail" name='JJTabsShippingTitle'}Versand{/s}
 			</a>
 		{/block}
 
-		{block name="frontend_detail_tabs_delivery"}
-			<a href="#" class="tab--link" title="" data-tabName="delivery">
-				{s name="DetailTabsDelivery"}{/s}
-			</a>
-		{/block}
 
 	{/block}
 	</div>
@@ -43,59 +38,45 @@
 		{block name="frontend_detail_tabs_content_inner"}
 			{block name="frontend_detail_tabs_content_description"}{/block}
 
-			{if $sArticle.attr1}
+			{if $sArticle.jj_article_detail_tab}
 			{block name="frontend_detail_tabs_content_scope"}
 			<div class="tab--container">
 				{block name="frontend_detail_tabs_content_scope_inner"}
 				<div class="tab--content">
 				<span class="jj--on-mobile">{s name="DetailTabsScope"}{/s}</span>
-				{$sArticle.attr1}
+                    {$sArticle.jj_article_detail_tab}
 				</div>
 				{/block}
 			</div>
 			{/block}
 			{/if}
 
-			{if $sArticle.attr2}
+			{if $sArticle.jj_article_size_tab}
 			{block name="frontend_detail_tabs_content_material"}
 			<div class="tab--container">
 				{block name="frontend_detail_tabs_content_material_inner"}
 				<div class="tab--content">
 				<span class="jj--on-mobile">{s name="DetailTabsMaterial"}{/s}</span>
-				{$sArticle.attr2}
+                    {$sArticle.jj_article_size_tab}
 				</div>
 				{/block}
 			</div>
 			{/block}
 			{/if}
 
-			{if $sArticle.attr3}
+			{if $sArticle.jj_article_shipping_tab}
 			{block name="frontend_detail_tabs_content_measures"}
 			<div class="tab--container">
 				{block name="frontend_detail_tabs_content_measures_inner"}
 				<div class="tab--content">
 				<span class="jj--on-mobile">{s name="DetailTabsMeasures"}{/s}</span>
-				{$sArticle.attr3}
+                    {$sArticle.jj_article_shipping_tab}
 				</div>
 				{/block}
 			</div>
 			{/block}
 			{/if}
 
-			{if $sArticle.attr4}
-			{block name="frontend_detail_tabs_content_delivery"}
-			<div class="tab--container">
-				{block name="frontend_detail_tabs_content_delivery_inner"}
-				<div class="tab--content">
-				<span class="jj--on-mobile">{s name="DetailTabsDelivery"}{/s}</span>
-				{block name='frontend_detail_buy_laststock'}
-					{$sArticle.attr4}
-        {/block}
-				</div>
-				{/block}
-			</div>
-			{/block}
-			{/if}
 
 		{/block}
 	</div>
