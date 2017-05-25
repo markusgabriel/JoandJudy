@@ -43,84 +43,93 @@
 
             {* "Buy now" box container *}
             {block name='frontend_detail_index_buy_container'}
-                <div class="product--buybox block{if $sArticle.sConfigurator && $sArticle.sConfiguratorSettings.type==2} is--wide{/if}">
+                <div class="jj--sticky-element">
+                    <div class="product--buybox block{if $sArticle.sConfigurator && $sArticle.sConfiguratorSettings.type==2} is--wide{/if}">
 
-                		{* Product name *}
-                    {block name='frontend_detail_index_name'}
-                        <h1 class="product--title" itemprop="name">
-                            {$sArticle.articleName}
-                        </h1>
-                    {/block}
+                        {* Product name *}
+                        {block name='frontend_detail_index_name'}
+                            <h1 class="product--title" itemprop="name">
+                                {$sArticle.articleName}
+                            </h1>
+                        {/block}
 
-                    {block name='frontend_detail_buy_laststock'}
-                    {/block}
+                        {block name='frontend_detail_buy_laststock'}
+                        {/block}
 
-                    {* Product data *}
-                    {block name='frontend_detail_index_buy_container_inner'}
-                        <div itemprop="offers" itemscope itemtype="{if $sArticle.sBlockPrices}http://schema.org/AggregateOffer{else}http://schema.org/Offer{/if}" class="buybox--inner">
+                        {* Product data *}
+                        {block name='frontend_detail_index_buy_container_inner'}
+                            <div itemprop="offers" itemscope itemtype="{if $sArticle.sBlockPrices}http://schema.org/AggregateOffer{else}http://schema.org/Offer{/if}" class="buybox--inner">
 
-                            {block name='frontend_detail_index_data'}
-                                {if $sArticle.sBlockPrices}
-                                    {$lowestPrice=false}
-                                    {$highestPrice=false}
-                                    {foreach $sArticle.sBlockPrices as $blockPrice}
-                                        {if $lowestPrice === false || $blockPrice.price < $lowestPrice}
-                                            {$lowestPrice=$blockPrice.price}
-                                        {/if}
-                                        {if $highestPrice === false || $blockPrice.price > $highestPrice}
-                                            {$highestPrice=$blockPrice.price}
-                                        {/if}
-                                    {/foreach}
+                                {block name='frontend_detail_index_data'}
+                                    {if $sArticle.sBlockPrices}
+                                        {$lowestPrice=false}
+                                        {$highestPrice=false}
+                                        {foreach $sArticle.sBlockPrices as $blockPrice}
+                                            {if $lowestPrice === false || $blockPrice.price < $lowestPrice}
+                                                {$lowestPrice=$blockPrice.price}
+                                            {/if}
+                                            {if $highestPrice === false || $blockPrice.price > $highestPrice}
+                                                {$highestPrice=$blockPrice.price}
+                                            {/if}
+                                        {/foreach}
 
-                                    <meta itemprop="lowPrice" content="{$lowestPrice}" />
-                                    <meta itemprop="highPrice" content="{$highestPrice}" />
-                                    <meta itemprop="offerCount" content="{$sArticle.sBlockPrices|count}" />
-                                {else}
-                                    <meta itemprop="priceCurrency" content="{$Shop->getCurrency()->getCurrency()}"/>
-                                {/if}
-                                {include file="frontend/detail/data.tpl" sArticle=$sArticle sView=1}
-                            {/block}
-
-                            {block name='frontend_detail_index_after_data'}{/block}
-
-                            {* Configurator drop down menu's *}
-                            {block name="frontend_detail_index_configurator"}
-                                <div class="product--configurator">
-                                    {if $sArticle.sConfigurator}
-                                        {if $sArticle.sConfiguratorSettings.type == 1}
-                                            {include file="frontend/detail/config_step.tpl"}
-                                        {elseif $sArticle.sConfiguratorSettings.type == 2}
-                                            {include file="frontend/detail/config_variant.tpl"}
-                                        {else}
-                                            {include file="frontend/detail/config_upprice.tpl"}
-                                        {/if}
+                                        <meta itemprop="lowPrice" content="{$lowestPrice}" />
+                                        <meta itemprop="highPrice" content="{$highestPrice}" />
+                                        <meta itemprop="offerCount" content="{$sArticle.sBlockPrices|count}" />
+                                    {else}
+                                        <meta itemprop="priceCurrency" content="{$Shop->getCurrency()->getCurrency()}"/>
                                     {/if}
-                                </div>
-                            {/block}
+                                    {include file="frontend/detail/data.tpl" sArticle=$sArticle sView=1}
+                                {/block}
 
-                            {* Product description *}
-						    {block name='frontend_detail_description_text'}
-						        <div class="product--description" itemprop="description">
-						            {$sArticle.description_long}
-						        </div>
-						    {/block}
+                                {block name='frontend_detail_index_after_data'}{/block}
 
-                            {block name="frontend_detail_index_detail"}
-        			            {* Tab navigation *}
-        			            {block name="frontend_detail_index_tabs"}
-        			                {include file="frontend/detail/tabs.tpl"}
-        			            {/block}
-    				        {/block}
+                                {* Configurator drop down menu's *}
+                                {block name="frontend_detail_index_configurator"}
+                                    <div class="product--configurator">
+                                        {if $sArticle.sConfigurator}
+                                            {if $sArticle.sConfiguratorSettings.type == 1}
+                                                {include file="frontend/detail/config_step.tpl"}
+                                            {elseif $sArticle.sConfiguratorSettings.type == 2}
+                                                {include file="frontend/detail/config_variant.tpl"}
+                                            {else}
+                                                {include file="frontend/detail/config_upprice.tpl"}
+                                            {/if}
+                                        {/if}
+                                    </div>
+                                {/block}
+
+                                {* Product description *}
+                                {block name='frontend_detail_description_text'}
+                                    <div class="product--description" itemprop="description">
+                                        {$sArticle.description_long}
+                                    </div>
+                                {/block}
+
+                                {block name="frontend_detail_index_detail"}
+                                    {* Tab navigation *}
+                                    {block name="frontend_detail_index_tabs"}
+                                        {include file="frontend/detail/tabs.tpl"}
+                                    {/block}
+                                {/block}
 
 
-                            {* Include buy button and quantity box *}
-                            {block name="frontend_detail_index_buybox"}
-                                {include file="frontend/detail/buy.tpl"}
-                            {/block}
+                                {* Include buy button and quantity box *}
+                                {block name="frontend_detail_index_buybox"}
+                                    {include file="frontend/detail/buy.tpl"}
+                                {/block}
 
-                        </div>
-                    {/block}
+                                {* Product actions *}
+                                {block name="frontend_detail_index_actions"}
+                                    <nav class="product--actions">
+                                        {include file="frontend/detail/actions.tpl"}
+                                    </nav>
+                                {/block}
 
+                            </div>
+                        {/block}
+
+                    </div>
                 </div>
             {/block}
         </div>
@@ -136,7 +145,7 @@
             {$showAlsoViewed = {config name=similarViewedShow}}
             {$showAlsoBought = {config name=alsoBoughtShow}}
 
-            <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
+            <div class="jj--sticky-stop tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
 
                 {* Tab navigation *}
                 {block name="frontend_detail_index_tabs_navigation"}

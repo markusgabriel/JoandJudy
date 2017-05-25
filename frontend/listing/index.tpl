@@ -8,8 +8,17 @@
     {*{include file='frontend/listing/sidebar.tpl'}*}
 {/block}
 
+{block name="frontend_index_navigation" append}
+    {if $sCategoryContent.media.source}
+        <div class="jj--page-header-banner">
+            <img src="{$sCategoryContent.media.source}">
+        </div>
+    {/if}
+{/block}
+
 {* Main content *}
 {block name='frontend_index_content'}
+
     <div class="content listing--content">
 
         {* Banner *}
@@ -62,7 +71,10 @@
                 {action module=widgets controller=listing action=tag_cloud sController=listing sCategory=$sCategoryContent.id}
             {/if}*}
         {/block}
+
+        <div class="jj--sticky-stop"></div>
     </div>
+
 {/block}
 
 {* Sidebar right *}

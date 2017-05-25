@@ -11,7 +11,7 @@
         {$fullscreen = false}
 
         {block name="frontend_listing_emotions"}
-            <div class="content--emotions">
+            <div class="content--emotions {$emotion.attribute.jj_emotion_top_class}">
 
                 {foreach $emotions as $emotion}
 
@@ -38,7 +38,7 @@
                             {$fullscreen = true}
                         {/if}
 
-                        <div class="emotion--wrapper"
+                        <div class="emotion--wrapper {$emotion.attribute.jj_emotion_top_class}"
                              data-controllerUrl="{url module=widgets controller=emotion action=index emotionId=$emotion.id controllerName=$Controller}"
                              data-availableDevices="{$emotion.devices}"
                              data-showListing="{if $emotion.showListing == 1}true{else}false{/if}">
