@@ -21,6 +21,7 @@
 					background-color: #fff;
 					box-shadow: none;
 					height: 50px;
+					padding: 0px 20px !important;
 					i {
 						font-size: 18px;
 					}
@@ -58,6 +59,23 @@
 		text-align: left;
 		color: @gray;
 		.unitize(font-size, 10);
+		position: relative;
+		.jj--footer-social-media {
+			width: 100px;
+			text-align: center;
+			position: absolute;
+			top: 20px;
+			left: 50%;
+			margin-left: -50px;
+			a {
+				padding: 5px;
+				.unitize(font-size, 20);
+				color: @gray;
+				&:hover {
+					color: @brand-primary;
+				}
+			}
+		}
 	}
 
 }

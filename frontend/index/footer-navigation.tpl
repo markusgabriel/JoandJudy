@@ -6,7 +6,7 @@
 {block name="frontend_index_footer_column_service_menu"}{/block}
 
 {block name="frontend_index_footer_column_newsletter"}
-    <div class="jj--footer-newsletter">
+    <div class="jj--sticky-stop jj--footer-newsletter">
         {block name="frontend_index_footer_column_newsletter_content"}
             <div class="column--content">
                 <p class="column--desc">

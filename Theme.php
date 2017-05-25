@@ -19,7 +19,7 @@ class Theme extends \Shopware\Components\Theme
     protected $license = 'MIT';
 
     protected $javascript = array(
-        // 'src/js/jj-affix.js',
+        'src/js/jj-affix.js',
         'src/js/jj-functions.js'
     );
 
