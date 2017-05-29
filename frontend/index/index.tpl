@@ -64,4 +64,10 @@
     </div>
     {/block}
 
+    {if $sCategoryContent.media.source}
+        <div class="jj--page-header-banner">
+            <img src="{$sCategoryContent.media.source}">
+        </div>
+    {/if}
+
 {/block}

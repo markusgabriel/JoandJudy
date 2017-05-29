@@ -1,4 +1,4 @@
-<div class="blog--box panel">
+<div class="swiper-slide">
     {block name='frontend_blog_col_blog_entry'}
 
         {* Blog Header *}
@@ -79,7 +79,7 @@
                                class="blog--picture-main"
                                title="{$sArticle.title|escape}">
                                 {if isset($sArticle.media.thumbnails)}
-                                    <img srcset="{$sArticle.media.thumbnails[1].sourceSet}"
+                                    <img srcset="{$sArticle.media.thumbnails[2].sourceSet}"
                                          alt="{$sArticle.title|escape}"
                                          title="{$sArticle.title|escape|truncate:160}" />
                                 {else}
@@ -97,15 +97,15 @@
                     <div class="blog--box-description{if !$sArticle.media} is--fluid{/if}">
 
                         {block name='frontend_blog_col_description_short'}
-                            {*<div class="blog--box-description-short">
+                            <div class="blog--box-description-short">
                                 {if $sArticle.shortDescription}{$sArticle.shortDescription|nl2br}{else}{$sArticle.shortDescription}{/if}
-                            </div>*}
+                            </div>
                         {/block}
 
                         {* Read more button *}
                         {block name='frontend_blog_col_read_more'}
                             <div class="blog--box-readmore">
-                                <a href="{url controller=blog action=detail sCategory=$sArticle.categoryId blogArticle=$sArticle.id}" title="{$sArticle.title|escape}">{s name="BlogLinkMore"}{/s}</a>
+                                <a href="{url controller=blog action=detail sCategory=$sArticle.categoryId blogArticle=$sArticle.id}" title="{$sArticle.title|escape}">{s name="JJBlogLinkMore"}Read More{/s}</a>
                             </div>
                         {/block}
 

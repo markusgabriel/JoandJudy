@@ -1,31 +1,302 @@
 .jj--home-tab-navigation {
-	.panel {
-		border: 0 !important;
-		ul {
-			text-align: center !important;
-			margin: 20px auto !important;
-			li {
-				display: inline-block !important;
-				margin: 0px 20px !important;
-				padding: 20px !important;
-				text-transform: uppercase !important;
-				cursor: pointer !important;
-				letter-spacing: 1px !important;
-				color: @gray !important;
-				&:hover {
-					color: @brand-primary !important;
-					text-decoration: underline !important;
+	ul {
+		text-align: center !important;
+		margin: 20px auto !important;
+		li {
+			display: inline-block !important;
+			margin: 0px 20px !important;
+			padding: 20px !important;
+			text-transform: uppercase !important;
+			cursor: pointer !important;
+			letter-spacing: 1px !important;
+			color: @gray !important;
+			&:hover {
+				color: @brand-primary !important;
+				text-decoration: underline !important;
+			}
+			&.active {
+				color: @brand-primary !important;
+				text-decoration: underline !important;
+			}
+		}
+	}
+}
+
+.jj--home-tab-content {
+	.jj--home-tab-newin {
+		> div {
+			text-align: center;
+			a {
+				figure {
+					display: inline-block;
+					margin: 20px;
+					position: relative;
+					figcaption {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						left: 0;
+						top: auto;
+						color: @brand-primary;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						line-height: 180%;
+						.unitize(font-size, 16);
+						padding: 20px 20px 10px 20px;
+						height: 30%;
+						text-align: left;
+						.transition(0.3s);
+						.opacity(0);
+					}
 				}
-				&.active {
-					color: @brand-primary !important;
-					text-decoration: underline !important;
+				&:hover {
+					figure {
+						figcaption {
+							.opacity(1);
+						}
+					}
+				}
+			}
+			&.jj--home-tab-text {
+				max-width: 600px;
+				margin: 20px auto;
+				a {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+	.jj--home-tab-collection {
+		> div {
+			text-align: center;
+			a {
+				figure {
+					display: inline-block;
+					margin: 20px;
+					position: relative;
+					figcaption {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						left: 0;
+						top: auto;
+						color: @gray;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						line-height: 180%;
+						.unitize(font-size, 16);
+						padding: 20px 20px 10px 20px;
+						height: 20%;
+						text-align: center;
+						.transition(0.3s);
+						.opacity(0);
+						background-color: rgba(255,255,255,0.8);
+					}
+				}
+				&:hover {
+					figure {
+						figcaption {
+							.opacity(1);
+						}
+					}
+				}
+			}
+			&.jj--home-tab-text {
+				max-width: 600px;
+				margin: 20px auto;
+				a {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+	.jj--home-tab-magazine {
+		> div {
+			text-align: center;
+			a {
+				figure {
+					display: inline-block;
+					margin: 20px;
+					position: relative;
+					padding-top: 40px;
+					figcaption {
+						position: absolute;
+						bottom: auto;
+						right: 0;
+						left: 0;
+						top: 0;
+						color: @text-color-dark;
+						letter-spacing: 1px;
+						line-height: 180%;
+						.unitize(font-size, 24);
+						padding: 0px 20px 10px 20px;
+						height: auto;
+						width: 50%;
+						text-align: left;
+					}
+				}
+				&:hover {
+					figure {
+						figcaption {
+							color: @brand-primary;
+						}
+					}
+				}
+			}
+			&.jj--home-tab-text {
+				max-width: 600px;
+				margin: 20px auto;
+				a {
+					text-transform: uppercase;
+					letter-spacing: 1px;
 				}
 			}
 		}
 	}
 }
 
-.jj--home-tab-text-container {
-	.panel {
+
+.jj--home-tab-navigation-mobile {
+	ul {
+		text-align: center !important;
+		margin: 20px auto !important;
+		li {
+			display: inline-block !important;
+			margin: 0px !important;
+			padding: 10px !important;
+			text-transform: uppercase !important;
+			cursor: pointer !important;
+			letter-spacing: 1px !important;
+			color: @gray !important;
+			&:hover {
+				color: @brand-primary !important;
+				text-decoration: underline !important;
+			}
+			&.active {
+				color: @brand-primary !important;
+				text-decoration: underline !important;
+			}
+		}
+	}
+}
+.jj--home-tab-content-mobile {
+	.jj--home-tab-newin {
+		> div {
+			text-align: center;
+			figure {
+				display: inline-block;
+				margin: 1%;
+				position: relative;
+				max-width: 46%;
+				display: inline-block;
+				figcaption {
+					position: absolute;
+					bottom: 0;
+					right: 0;
+					left: 0;
+					top: auto;
+					color: @brand-primary;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					line-height: 180%;
+					.unitize(font-size, 16);
+					padding: 20px 20px 10px 20px;
+					text-align: left;
+				}
+			}
+			&.jj--home-tab-text {
+				max-width: 600px;
+				margin: 20px auto;
+				a {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+	.jj--home-tab-collection {
+		> div {
+			text-align: left;
+			a {
+				figure {
+					display: inline-block;
+					margin: 1%;
+					max-width: 47%;
+					display: inline-block;
+					position: relative;
+					vertical-align: top;
+					figcaption {
+						position: absolute;
+						bottom: 0;
+						right: 0;
+						left: 0;
+						top: auto;
+						color: @gray;
+						text-transform: uppercase;
+						letter-spacing: 1px;
+						line-height: 180%;
+						.unitize(font-size, 16);
+						padding: 10px 20px;
+						height: auto;
+						text-align: center;
+						background-color: rgba(255,255,255,0.8);
+					}
+				}
+			}
+			.jj--home-tab-text {
+				max-width: 47%;
+				margin: 1%;
+				display: inline-block;
+				a {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+		}
+	}
+	.jj--home-tab-magazine {
+		> div {
+			text-align: center;
+			a {
+				figure {
+					display: inline-block;
+					margin: 20px;
+					position: relative;
+					padding-top: 40px;
+					figcaption {
+						position: absolute;
+						bottom: auto;
+						right: 0;
+						left: 0;
+						top: 0;
+						color: @text-color-dark;
+						letter-spacing: 1px;
+						line-height: 180%;
+						.unitize(font-size, 18);
+						padding: 0px 20px 10px 20px;
+						height: auto;
+						width: 50%;
+						text-align: left;
+					}
+				}
+				&:hover {
+					figure {
+						figcaption {
+							color: @brand-primary;
+						}
+					}
+				}
+			}
+			&.jj--home-tab-text {
+				max-width: 600px;
+				margin: 20px auto;
+				a {
+					text-transform: uppercase;
+					letter-spacing: 1px;
+				}
+			}
+		}
 	}
 }

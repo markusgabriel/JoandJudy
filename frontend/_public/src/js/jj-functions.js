@@ -57,3 +57,9 @@
             });
         }
     });
+
+    var blogSlider = new Swiper('.jj--blog-slider', {
+        speed: 500,
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+    });

@@ -14,21 +14,16 @@
 
                 {* Rich snippets *}
                 {block name='frontend_blog_detail_rich_snippets'}
-                    {if $sArticle.author.name}
+                    {*{if $sArticle.author.name}
                         <meta itemprop="author" content="{$sArticle.author.name}">
                     {/if}
 
-                    <meta itemprop="wordCount" content="{$sArticle.description|strip_tags|count_words}">
+                    <meta itemprop="wordCount" content="{$sArticle.description|strip_tags|count_words}">*}
                 {/block}
 
                 {* Detail Box Header *}
                 {block name='frontend_blog_detail_box_header'}
                     <div class="blog--detail-header">
-
-                        {* Article name *}
-                        {block name='frontend_blog_detail_title'}
-                            <h1 class="blog--detail-headline" itemprop="name">{$sArticle.title}</h1>
-                        {/block}
 
                         {* Metadata *}
                         {block name='frontend_blog_detail_metadata'}
@@ -36,9 +31,9 @@
 
                                 {* Author *}
                                 {block name='frontend_blog_detail_author'}
-                                    {if $sArticle.author.name}
+                                    {*{if $sArticle.author.name}
                                         <span class="blog--metadata-author blog--metadata is--first">{s name="BlogInfoFrom"}{/s}: {$sArticle.author.name}</span>
-                                    {/if}
+                                    {/if}*}
                                 {/block}
 
                                 {* Date *}
@@ -52,25 +47,35 @@
                                 {* Comments *}
                                 {block name='frontend_blog_detail_comments_count'}
                                     {* @deprecated - will be removed, use block frontend_blog_detail_comments_count *}
-                                    {block name='frontend_blog_detail_comments'}
+                                    {*{block name='frontend_blog_detail_comments'}
                                         <span class="blog--metadata-comments blog--metadata">
                                             <a data-scroll="true" data-scrollTarget="#blog--comments-start" href="#blog--comments-start" title="{"{s name="BlogLinkComments"}{/s}"|escape}">{$sArticle.comments|count|default:0} {s name="BlogInfoComments"}{/s}</a>
                                         </span>
-                                    {/block}
+                                    {/block}*}
                                 {/block}
 
                                 {* Rating *}
                                 {block name='frontend_blog_detail_rating'}
-                                    {if $sArticle.sVoteAverage|round}
+                                    {*{if $sArticle.sVoteAverage|round}
                                         <span class="blog--metadata-rating blog--metadata">
                                             <a data-scroll="true" data-scrollTarget="#blog--comments-start" href="#blog--comments-start" class="blog--rating-link" rel="nofollow" title="{"{s name='BlogHeaderRating'}{/s}"|escape}">
                                                 {include file="frontend/_includes/rating.tpl" points=$sArticle.sVoteAverage|round type="aggregated" count=$sArticle.comments|count}
                                             </a>
                                         </span>
-                                    {/if}
+                                    {/if}*}
                                 {/block}
 
                             </div>
+                        {/block}
+
+                        {* Article name *}
+                        {block name='frontend_blog_detail_title'}
+                            <h1 class="blog--detail-headline" itemprop="name">{$sArticle.title}</h1>
+                        {/block}
+
+                        {* Image + Thumbnails *}
+                        {block name='frontend_blog_detail_images'}
+                            {include file="frontend/blog/images.tpl"}
                         {/block}
                     </div>
                 {/block}
@@ -82,12 +87,6 @@
                         {* Description *}
                         {block name='frontend_blog_detail_description'}
                             <div class="blog--detail-description block" itemprop="articleBody">
-
-                                {* Image + Thumbnails *}
-                                {block name='frontend_blog_detail_images'}
-                                    {include file="frontend/blog/images.tpl"}
-                                {/block}
-
                                 {$sArticle.description}
                             </div>
                         {/block}
@@ -112,7 +111,7 @@
 
                             {* Bookmarks *}
                             {block name='frontend_blog_detail_bookmarks'}
-                                {include file="frontend/blog/bookmarks.tpl"}
+                                {*{include file="frontend/blog/bookmarks.tpl"}*}
                             {/block}
 
                         {/block}
@@ -124,9 +123,9 @@
         {* Comments *}
         {block name='frontend_blog_detail_comments_list'}
             {* @deprecated - will be removed, use block frontend_blog_detail_comments_list *}
-            {block name='frontend_blog_detail_comments'}
+            {*{block name='frontend_blog_detail_comments'}
                 {include file="frontend/blog/comments.tpl"}
-            {/block}
+            {/block}*}
         {/block}
 
         {* Cross selling *}

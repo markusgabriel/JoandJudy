@@ -1,4 +1,20 @@
+<div class="swiper-container jj--blog-slider">
+    <div class="swiper-wrapper">
+        {if $sBlogArticles}
+            {foreach from=$sBlogArticles item=sArticle key=key name="counter"}
+                {if $smarty.foreach.counter.index == 3}
+                    {break}
+                {/if}
+                {include file="frontend/blog/blog-slider.tpl" sArticle=$sArticle key=$key}
+            {/foreach}
+        {/if}
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+
 <div class="blog--listing block">
+
     {if $sCategoryContent.cmsheadline || $sCategoryContent.cmstext}
         {include file="frontend/listing/text.tpl"}
     {/if}

@@ -10,7 +10,7 @@
 
         {* Blog Sidebar *}
         {block name='frontend_blog_listing_sidebar'}
-            {include file='frontend/blog/listing_sidebar.tpl'}
+            {*{include file='frontend/blog/listing_sidebar.tpl'}*}
         {/block}
 
         {* Blog Banner *}
