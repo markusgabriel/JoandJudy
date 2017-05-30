@@ -1,5 +1,5 @@
 <div class="panel register--shipping is--hidden">
-    <h2 class="panel--title is--underline">{s name='RegisterShippingHeadline'}{/s}</h2>
+    <h2 class="panel--title jj--headline-center">{s name='RegisterShippingHeadline'}{/s}</h2>
     <div class="panel--body is--wide">
         {* Salutation *}
         {getSalutations variable="salutations"}

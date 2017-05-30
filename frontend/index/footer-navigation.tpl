@@ -23,7 +23,7 @@
 
                         {block name="frontend_index_footer_column_newsletter_form_submit"}
                             <button type="submit" class="newsletter--button btn">
-                                <i class="icon--arrow-right"></i> <span class="button--text">{s name='IndexFooterNewsletterSubmit'}{/s}</span>
+                                <i class="jj--icon-slider-arrow-right-small"></i> <span class="button--text">{s name='IndexFooterNewsletterSubmit'}{/s}</span>
                             </button>
                         {/block}
                     </form>

@@ -10,23 +10,11 @@
         {/if}
     {/block}
 
-    {* New customer *}
-    {block name='frontend_register_login_newcustomer'}
-        <div class="register--new-customer">
-            <a href="#registration"
-               class="new-customer-btn btn is--icon-right"
-               id="new-customer-action"
-               data-collapseTarget="#registration">
-                {s name="LoginLinkRegister2"}{/s}
-            </a>
-        </div>
-    {/block}
-
     {* Existing customer *}
     {block name='frontend_register_login_customer'}
-        <div class="register--existing-customer panel has--border is--rounded">
+        <div class="register--existing-customer panel">
 
-            <h2 class="panel--title is--underline">{s name="LoginHeaderExistingCustomer"}{/s}</h2>
+            <h2 class="panel--title jj--headline-center">{s name="JJLoginHeaderExistingCustomer"}Login{/s}</h2>
             <div class="panel--body is--wide">
                 {block name='frontend_register_login_form'}
                     {if $register.personal.sValidation}
@@ -39,7 +27,7 @@
                         {if $sTarget}<input name="sTarget" type="hidden" value="{$sTarget|escape}" />{/if}
 
                         {block name='frontend_register_login_description'}
-                            <div class="register--login-description">{s name="LoginHeaderFields"}{/s}</div>
+                            {*<div class="register--login-description">{s name="LoginHeaderFields"}{/s}</div>*}
                         {/block}
 
                         {block name='frontend_register_login_input_email'}
@@ -64,13 +52,30 @@
 
                         {block name='frontend_register_login_input_form_submit'}
                             <div class="register--login-action">
-                                <button type="submit" class="register--login-btn btn is--primary is--large is--icon-right" name="Submit">{s name="LoginLinkLogon"}{/s} <i class="icon--arrow-right"></i></button>
+                                <button type="submit" class="register--login-btn btn is--large" name="Submit">{s name="LoginLinkLogon"}{/s}</button>
                             </div>
                         {/block}
+
+                        {block name='frontend_register_login_input_form_no_account'}
+                            {*<span class="jj--open-register">{s name="JJLoginLinkOpenRegister"}No account yet? <span>Register here</span>.{/s}</span>*}
+                        {/block}
+
                     </form>
                 {/block}
             </div>
 
         </div>
+    {/block}
+
+    {* New customer *}
+    {block name='frontend_register_login_newcustomer'}
+       {* <div class="register--new-customer">
+            <a href="#registration"
+               class="new-customer-btn btn is--icon-right"
+               id="new-customer-action"
+               data-collapseTarget="#registration">
+                {s name="LoginLinkRegister2"}{/s}
+            </a>
+        </div>*}
     {/block}
 </div>

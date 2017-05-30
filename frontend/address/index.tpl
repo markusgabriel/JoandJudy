@@ -12,7 +12,7 @@
         {* Addresses headline *}
         {block name="frontend_address_headline"}
             <div class="account--welcome">
-                <h1 class="panel--title">{s name="AddressesTitle"}My addresses{/s}</h1>
+                <h1 class="panel--title jj--headline-center">{s name="AddressesTitle"}My addresses{/s}</h1>
             </div>
         {/block}
 

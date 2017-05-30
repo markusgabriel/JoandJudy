@@ -13,12 +13,15 @@
             <form name="profileForm" action="{url controller=account action=saveProfile}" method="post">
 
                 {block name="frontend_account_profile_profile_panel"}
-                    <div class="panel has--border is--rounded">
+                    <div class="jj--collapse-panel">
 
+                        <div class="jj--collapse-header">
                         {block name="frontend_account_profile_profile_title"}
-                            <div class="panel--title is--underline">{s name="ProfileHeadline"}{/s}</div>
+                            <h2>{s name="ProfileHeadline"}{/s}</h2>
                         {/block}
+                        </div>
 
+                        <div class="jj--collapse-body">
                         {block name="frontend_account_profile_profile_body"}
                             <div class="panel--body is--wide">
 
@@ -171,6 +174,7 @@
                                 {/block}
                             </div>
                         {/block}
+                        </div>
                     </div>
                 {/block}
             </form>
@@ -182,97 +186,102 @@
                     <form name="emailForm" action="{url controller=account action=saveEmail}" method="post">
 
                         {block name="frontend_account_profile_email_panel"}
-                            <div class="panel has--border is--rounded">
+                            <div class="jj--collapse-panel">
 
-                                {block name="frontend_account_profile_email_title"}
-                                    <div class="panel--title is--underline">{s name="EmailHeadline"}{/s}</div>
-                                {/block}
+                                <div class="jj--collapse-header">
+                                    {block name="frontend_account_profile_email_title"}
+                                        <h2>{s name="EmailHeadline"}{/s}</h2>
+                                    {/block}
+                                </div>
 
-                                {block name="frontend_account_profile_email_body"}
-                                    <div class="panel--body is--wide">
+                                <div class="jj--collapse-body">
 
-                                        {block name="frontend_account_profile_email_success"}
-                                            {if $section == 'email' && $success}
-                                                {include file="frontend/_includes/messages.tpl" type="success" content="{s name="EmailSaveSuccessMessage"}{/s}"}
-                                            {/if}
-                                        {/block}
+                                    {block name="frontend_account_profile_email_body"}
+                                        <div class="panel--body is--wide">
 
-                                        {* Error messages *}
-                                        {block name="frontend_account_profile_email_errors"}
-                                            {if $section == 'email'}
-                                                {include file="frontend/register/error_message.tpl" error_messages=$errorMessages}
-                                            {/if}
-                                        {/block}
+                                            {block name="frontend_account_profile_email_success"}
+                                                {if $section == 'email' && $success}
+                                                    {include file="frontend/_includes/messages.tpl" type="success" content="{s name="EmailSaveSuccessMessage"}{/s}"}
+                                                {/if}
+                                            {/block}
 
-                                        {block name="frontend_account_profile_email_current"}
-                                            <div>
-                                                <strong>{s name="EmailCurrentEmailLabel"}{/s}</strong>
-                                                <div class="profile--field">
-                                                    {$sUserData.additional.user.email}
+                                            {* Error messages *}
+                                            {block name="frontend_account_profile_email_errors"}
+                                                {if $section == 'email'}
+                                                    {include file="frontend/register/error_message.tpl" error_messages=$errorMessages}
+                                                {/if}
+                                            {/block}
+
+                                            {block name="frontend_account_profile_email_current"}
+                                                <div>
+                                                    <strong>{s name="EmailCurrentEmailLabel"}{/s}</strong>
+                                                    <div class="profile--field">
+                                                        {$sUserData.additional.user.email}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        {/block}
+                                            {/block}
 
-                                        {* Email *}
-                                        {block name='frontend_account_profile_email_input_email'}
-                                            <div class="profile--email">
-                                                <input autocomplete="section-personal email"
-                                                       required="required"
-                                                       aria-required="true"
-                                                       name="email[email]"
-                                                       type="email"
-                                                       value="{$form_data.email.email}"
-                                                       placeholder="{s name="AccountLabelNewMail" namespace="frontend/account/index"}{/s}{s name="Star" namespace="frontend/listing/box_article"}{/s}"
-                                                       class="profile--field is--required {if $errorFlags.email}has--error{/if}" />
-                                            </div>
-                                        {/block}
-
-                                        {* Email confirmation *}
-                                        {block name='frontend_account_profile_email_input_email_confirmation'}
-                                            <div class="profile--email-confirmation">
-                                                <input name="email[emailConfirmation]"
-                                                       type="email"
-                                                       required="required"
-                                                       aria-required="true"
-                                                       value="{$form_data.email.emailConfirmation}"
-                                                       placeholder="{s name="AccountLabelMail" namespace="frontend/account/index"}{/s}{s name="Star" namespace="frontend/listing/box_article"}{/s}"
-                                                       class="profile--field is--required {if $errorFlags.emailConfirmation}has--error{/if}"
-                                                />
-                                            </div>
-                                        {/block}
-
-                                        {block name='frontend_account_profile_email_input_current_password'}
-                                            {if {config name=accountPasswordCheck}}
-                                                <div class="profile--current-password">
-                                                    <input name="email[currentPassword]"
-                                                           type="password"
-                                                           autocomplete="current-password"
+                                            {* Email *}
+                                            {block name='frontend_account_profile_email_input_email'}
+                                                <div class="profile--email">
+                                                    <input autocomplete="section-personal email"
                                                            required="required"
                                                            aria-required="true"
-                                                           placeholder="{s name="AccountLabelCurrentPassword2" namespace="frontend/account/index"}{/s}{s name="Star" namespace="frontend/listing/box_article"}{/s}"
-                                                           class="profile--field is--required {if $section == 'email' && $errorFlags.currentPassword}has--error{/if}"
+                                                           name="email[email]"
+                                                           type="email"
+                                                           value="{$form_data.email.email}"
+                                                           placeholder="{s name="AccountLabelNewMail" namespace="frontend/account/index"}{/s}{s name="Star" namespace="frontend/listing/box_article"}{/s}"
+                                                           class="profile--field is--required {if $errorFlags.email}has--error{/if}" />
+                                                </div>
+                                            {/block}
+
+                                            {* Email confirmation *}
+                                            {block name='frontend_account_profile_email_input_email_confirmation'}
+                                                <div class="profile--email-confirmation">
+                                                    <input name="email[emailConfirmation]"
+                                                           type="email"
+                                                           required="required"
+                                                           aria-required="true"
+                                                           value="{$form_data.email.emailConfirmation}"
+                                                           placeholder="{s name="AccountLabelMail" namespace="frontend/account/index"}{/s}{s name="Star" namespace="frontend/listing/box_article"}{/s}"
+                                                           class="profile--field is--required {if $errorFlags.emailConfirmation}has--error{/if}"
                                                     />
                                                 </div>
-                                            {/if}
-                                        {/block}
+                                            {/block}
 
-                                        {block name="frontend_account_profile_email_required_info"}
-                                            <div class="required-info required_fields">
-                                                {s name='RegisterPersonalRequiredText' namespace='frontend/register/personal_fieldset'}{/s}
-                                            </div>
-                                        {/block}
-                                    </div>
-                                {/block}
+                                            {block name='frontend_account_profile_email_input_current_password'}
+                                                {if {config name=accountPasswordCheck}}
+                                                    <div class="profile--current-password">
+                                                        <input name="email[currentPassword]"
+                                                               type="password"
+                                                               autocomplete="current-password"
+                                                               required="required"
+                                                               aria-required="true"
+                                                               placeholder="{s name="AccountLabelCurrentPassword2" namespace="frontend/account/index"}{/s}{s name="Star" namespace="frontend/listing/box_article"}{/s}"
+                                                               class="profile--field is--required {if $section == 'email' && $errorFlags.currentPassword}has--error{/if}"
+                                                        />
+                                                    </div>
+                                                {/if}
+                                            {/block}
 
-                                {block name="frontend_account_profile_email_actions"}
-                                    <div class="panel--actions is--wide">
-                                        {block name="frontend_account_profile_email_actions_submit"}
-                                            <button class="btn is--block is--primary" type="submit" data-preloader-button="true">
-                                                {s name="EmailSaveButton"}{/s}
-                                            </button>
-                                        {/block}
-                                    </div>
-                                {/block}
+                                            {block name="frontend_account_profile_email_required_info"}
+                                                <div class="required-info required_fields">
+                                                    {s name='RegisterPersonalRequiredText' namespace='frontend/register/personal_fieldset'}{/s}
+                                                </div>
+                                            {/block}
+                                        </div>
+                                    {/block}
+
+                                    {block name="frontend_account_profile_email_actions"}
+                                        <div class="panel--actions is--wide">
+                                            {block name="frontend_account_profile_email_actions_submit"}
+                                                <button class="btn is--block is--primary" type="submit" data-preloader-button="true">
+                                                    {s name="EmailSaveButton"}{/s}
+                                                </button>
+                                            {/block}
+                                        </div>
+                                    {/block}
+                                </div>
                             </div>
                         {/block}
                     </form>
@@ -284,11 +293,14 @@
                     <form name="passwordForm" action="{url controller=account action=savePassword}" method="post">
 
                         {block name="frontend_account_profile_password_panel"}
-                            <div class="panel has--border is--rounded">
+                            <div class="jj--collapse-panel">
+                                <div class="jj--collapse-header">
+                                    {block name="frontend_account_profile_password_title"}
+                                        <h2>{s name="PasswordHeadline"}{/s}</h2>
+                                    {/block}
+                                </div>
 
-                                {block name="frontend_account_profile_password_title"}
-                                    <div class="panel--title is--underline">{s name="PasswordHeadline"}{/s}</div>
-                                {/block}
+                                <div class="jj--collapse-body">
 
                                 {block name="frontend_account_profile_password_body"}
                                     <div class="panel--body is--wide">
@@ -366,6 +378,7 @@
                                         {/block}
                                     </div>
                                 {/block}
+                                </div>
                             </div>
                         {/block}
                     </form>

@@ -74,6 +74,12 @@
 
 {* Register content *}
 {block name='frontend_index_content'}
+
+    {* Register Login *}
+    {block name='frontend_register_index_login'}
+        {include file="frontend/register/login.tpl"}
+    {/block}
+
     {block name='frontend_register_index_registration'}
         <div class="register--content panel content block has--border is--rounded{if $errors.occurred} is--collapsed{/if}" id="registration" data-register="true">
 
@@ -85,7 +91,7 @@
                 {if $register.personal.sValidation}
                     {* Include information related to registration for other customergroups then guest, this block get overridden by b2b essentials plugin *}
                     <div class="panel register--supplier">
-                        <h2 class="panel--title is--underline">{$sShopname|escapeHtml} {s name='RegisterHeadlineSupplier' namespace='frontend/register/index'}{/s}</h2>
+                        <h2 class="panel--title jj--headline-center">{$sShopname|escapeHtml} {s name='RegisterHeadlineSupplier' namespace='frontend/register/index'}{/s}</h2>
 
                         <div class="panel--body is--wide">
                             <p class="is--bold">{s name='RegisterInfoSupplier3' namespace='frontend/register/index'}{/s}</p>
@@ -140,7 +146,7 @@
                     {block name='frontend_register_index_form_submit'}
                         {* Submit button *}
                         <div class="register--action">
-                            <button type="submit" class="register--submit btn is--primary is--large is--icon-right" name="Submit">{s name="RegisterIndexNewActionSubmit"}{/s} <i class="icon--arrow-right"></i></button>
+                            <button type="submit" class="register--submit btn is--large" name="Submit">{s name="RegisterIndexNewActionSubmit"}{/s}</button>
                         </div>
                     {/block}
                 </form>
@@ -148,14 +154,9 @@
         </div>
     {/block}
 
-    {* Register Login *}
-    {block name='frontend_register_index_login'}
-        {include file="frontend/register/login.tpl"}
-    {/block}
-
     {* Register advantages *}
     {block name='frontend_register_index_advantages'}
-        <div class="register--advantages block">
+        {*<div class="register--advantages block">
             <h2 class="panel--title">{s name='RegisterInfoAdvantagesTitle'}{/s}</h2>
             {block name='frontend_index_content_advantages_list'}
                 <ul class="list--unordered is--checked register--advantages-list">
@@ -184,7 +185,7 @@
                     {/block}
                 </ul>
             {/block}
-        </div>
+        </div>*}
     {/block}
 
 {/block}

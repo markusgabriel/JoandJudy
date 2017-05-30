@@ -9,9 +9,18 @@
 
 {* Account Sidebar *}
 {block name="frontend_index_left_categories" prepend}
-    {block name="frontend_account_sidebar"}
+    {*{block name="frontend_account_sidebar"}
         {include file="frontend/account/sidebar.tpl"}
-    {/block}
+    {/block}*}
+{/block}
+
+{block name='frontend_index_breadcrumb' append}
+    <div class="jj--account-menu-container">
+        <span class="jj--account-menu-open"><i class="jj--icon-plus"></i></span>
+        {block name="frontend_account_sidebar"}
+            {include file="frontend/account/sidebar.tpl"}
+        {/block}
+    </div>
 {/block}
 
 {* Account Main Content *}
@@ -36,66 +45,69 @@
         {block name="frontend_account_index_welcome"}
             <div class="account--welcome panel">
                 {block name="frontend_account_index_welcome_headline"}
-                    <h1 class="panel--title">{s name='AccountHeaderWelcome'}{/s},
+                    <h1 class="panel--title jj--headline-center">{s name='JJAccountHeaderWelcome'}Hello{/s}
                         {if {config name="displayprofiletitle"}}
                             {$sUserData.additional.user.title}
                         {/if}
                         {$sUserData.additional.user.firstname|escapeHtml}
-                        {$sUserData.additional.user.lastname|escapeHtml}
+                        {*{$sUserData.additional.user.lastname|escapeHtml}*}
                     </h1>
                 {/block}
 
                 {block name="frontend_account_index_welcome_content"}
-                    <div class="panel--body is--wide">
+                    <div class="panel--body is--wide jj--text-center">
                         <p>{s name='AccountHeaderInfo'}{/s}</p>
                     </div>
                 {/block}
             </div>
         {/block}
 
-        <div data-panel-auto-resizer="true" class="account-info--container">
-            {* General user informations *}
-            {block name="frontend_account_index_info"}
-                <div class="account--info account--box panel has--border is--rounded">
+        <div class="jj--collapse-panel">
+        {* General user informations *}
+        {block name="frontend_account_index_info"}
+            <div class="jj--collapse-header">
+                {block name="frontend_account_index_info_headline"}
+                    <h2>{s name="AccountHeaderBasic"}{/s}</h2>
+                {/block}
+            </div>
+            <div class="jj--collapse-body">
+                {block name="frontend_account_index_info_content"}
+                    <div class="panel--body is--wide">
+                        <p>
+                            {$sUserData.additional.user.salutation|salutation}
+                            {if {config name="displayprofiletitle"}}
+                                {$sUserData.additional.user.title|escapeHtml}<br/>
+                            {/if}
+                            {$sUserData.additional.user.firstname|escapeHtml} {$sUserData.additional.user.lastname|escapeHtml}<br />
+                            {if $sUserData.additional.user.birthday}
+                                {$sUserData.additional.user.birthday|date:'dd.MM.y'}<br />
+                            {/if}
+                            {$sUserData.additional.user.email|escapeHtml}
+                        </p>
+                    </div>
+                {/block}
 
-                    {block name="frontend_account_index_info_headline"}
-                        <h2 class="panel--title is--underline">{s name="AccountHeaderBasic"}{/s}</h2>
-                    {/block}
+                {block name="frontend_account_index_info_actions"}
+                    <div class="panel--actions is--wide">
+                        <a href="{url controller=account action=profile}" title="{s name='AccountLinkChangeProfile'}{/s}" class="btn is--small">
+                            {s name='AccountLinkChangeProfile'}{/s}
+                        </a>
+                    </div>
+                {/block}
+            </div>
+        {/block}
+        </div>
 
-                    {block name="frontend_account_index_info_content"}
-                        <div class="panel--body is--wide">
-                            <p>
-                                {$sUserData.additional.user.salutation|salutation}
-                                {if {config name="displayprofiletitle"}}
-                                    {$sUserData.additional.user.title|escapeHtml}<br/>
-                                {/if}
-                                {$sUserData.additional.user.firstname|escapeHtml} {$sUserData.additional.user.lastname|escapeHtml}<br />
-                                {if $sUserData.additional.user.birthday}
-                                    {$sUserData.additional.user.birthday|date:'dd.MM.y'}<br />
-                                {/if}
-                                {$sUserData.additional.user.email|escapeHtml}
-                            </p>
-                        </div>
-                    {/block}
-
-                    {block name="frontend_account_index_info_actions"}
-                        <div class="panel--actions is--wide">
-                            <a href="{url controller=account action=profile}" title="{s name='AccountLinkChangeProfile'}{/s}" class="btn is--small">
-                                {s name='AccountLinkChangeProfile'}{/s}
-                            </a>
-                        </div>
-                    {/block}
-                </div>
-            {/block}
-
+        <div class="jj--collapse-panel">
             {* Payment information *}
             {block name="frontend_account_index_payment_method"}
-                <div class="account--payment account--box panel has--border is--rounded">
-
+                <div class="jj--collapse-header">
                     {block name="frontend_account_index_payment_method_headline"}
-                        <h2 class="panel--title is--underline">{s name="AccountHeaderPayment"}{/s}</h2>
+                        <h2>{s name="AccountHeaderPayment"}{/s}</h2>
                     {/block}
+                </div>
 
+                <div class="jj--collapse-body">
                     {block name="frontend_account_index_payment_method_content"}
                         <div class="panel--body is--wide">
                             <p>
@@ -124,15 +136,16 @@
         </div>
 
         {block name="frontend_account_index_addresses"}
-            <div data-panel-auto-resizer="true" class="account-address--container">
+            <div class="jj--collapse-panel">
                 {* Billing addresses *}
                 {block name="frontend_account_index_primary_billing"}
-                    <div class="account--billing account--box panel has--border is--rounded">
-
+                    <div class="jj--collapse-header">
                         {block name="frontend_account_index_primary_billing_headline"}
-                            <h2 class="panel--title is--underline">{s name="AccountHeaderPrimaryBilling"}{/s}</h2>
+                            <h2>{s name="AccountHeaderPrimaryBilling"}{/s}</h2>
                         {/block}
+                    </div>
 
+                    <div class="jj--collapse-body">
                         {block name="frontend_account_index_primary_billing_content"}
                             <div class="panel--body is--wide">
                                 {if $sUserData.billingaddress.company}
@@ -179,21 +192,24 @@
                         {/block}
                     </div>
                 {/block}
+            </div>
 
+            <div class="jj--collapse-panel">
                 {* Shipping addresses *}
                 {block name="frontend_account_index_primary_shipping"}
-                    <div class="account--shipping account--box panel has--border is--rounded">
-
+                    <div class="jj--collapse-header">
                         {block name="frontend_account_index_primary_shipping_headline"}
-                            <h2 class="panel--title is--underline">{s name="AccountHeaderPrimaryShipping"}{/s}</h2>
+                            <h2>{s name="AccountHeaderPrimaryShipping"}{/s}</h2>
                         {/block}
+                    </div>
 
+                    <div class="jj--collapse-body">
                         {block name="frontend_account_index_primary_shipping_content"}
                             <div class="panel--body is--wide">
                                 {if $activeBillingAddressId == $activeShippingAddressId}
                                     {block name="frontend_account_index_primary_shipping_content_equality_notice"}
                                         <div class="shipping--equal-info">
-                                            {s name="AccountAddressEqualsBilling"}Equal to the billing address{/s}
+                                            <p>{s name="AccountAddressEqualsBilling"}Equal to the billing address{/s}</p>
                                         </div>
                                     {/block}
                                 {else}
@@ -264,28 +280,32 @@
             </div>
         {/block}
 
-        {* Newsletter settings *}
-        {block name="frontend_account_index_newsletter_settings"}
-            <div class="account--newsletter account--box panel has--border is--rounded newsletter">
+        <div class="jj--collapse-panel">
+            {* Newsletter settings *}
+            {block name="frontend_account_index_newsletter_settings"}
 
-                {block name="frontend_account_index_newsletter_settings_headline"}
-                <h2 class="panel--title is--underline">{s name="AccountHeaderNewsletter"}{/s}</h2>
-                {/block}
+                <div class="jj--collapse-header">
+                    {block name="frontend_account_index_newsletter_settings_headline"}
+                    <h2>{s name="AccountHeaderNewsletter"}{/s}</h2>
+                    {/block}
+                </div>
 
-                {block name="frontend_account_index_newsletter_settings_content"}
-                    <div class="panel--body is--wide">
-                        <form name="frmRegister" method="post" action="{url action=saveNewsletter}">
-                            <fieldset>
-                                <input type="checkbox" name="newsletter" value="1" id="newsletter" data-auto-submit="true" {if $sUserData.additional.user.newsletter}checked="checked"{/if} />
-                                <label for="newsletter">
-                                    {s name="AccountLabelWantNewsletter"}{/s}
-                                </label>
-                            </fieldset>
-                        </form>
-                    </div>
-                {/block}
-            </div>
-        {/block}
+                <div class="jj--collapse-body">
+                    {block name="frontend_account_index_newsletter_settings_content"}
+                        <div class="panel--body is--wide">
+                            <form name="frmRegister" method="post" action="{url action=saveNewsletter}">
+                                <fieldset>
+                                    <input type="checkbox" name="newsletter" value="1" id="newsletter" data-auto-submit="true" {if $sUserData.additional.user.newsletter}checked="checked"{/if} />
+                                    <label for="newsletter">
+                                        {s name="AccountLabelWantNewsletter"}{/s}
+                                    </label>
+                                </fieldset>
+                            </form>
+                        </div>
+                    {/block}
+                </div>
+            {/block}
+        </div>
 
     </div>
 {/block}

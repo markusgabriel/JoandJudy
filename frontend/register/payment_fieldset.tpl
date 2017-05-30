@@ -2,7 +2,7 @@
     <div class="panel register--payment">
 
         {block name="frontend_register_payment_headline"}
-            <h2 class="panel--title is--underline">{s name='RegisterPaymentHeadline'}{/s}</h2>
+            <h2 class="panel--title jj--headline-center">{s name='RegisterPaymentHeadline'}{/s}</h2>
         {/block}
 
         {block name="frontend_register_payment_fieldset"}

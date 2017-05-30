@@ -15,6 +15,22 @@
         $('.listing--actions').removeClass('is--active');
         $('body').removeClass('jj--filter-active');
     });
+    $('.jj--account-menu-open').on('click', function() {
+        $(this).toggleClass('is--active');
+        $(this).next('.account--menu').toggleClass('is--active');
+    });
+    $('.jj--open-search').on('click', function() {
+        $('.jj--search-container').addClass('is--active');
+        $('body').addClass('jj--search-active');
+    });
+    $('.jj--close-search').on('click', function() {
+        $('.jj--search-container').removeClass('is--active');
+        $('body').removeClass('jj--search-active');
+    });
+    /* $('.cart--link').on('click', function() {
+        $(this).hide();
+        $(this).next('.close--off-canvas').show();
+    }); */
     /* $('.filter--btn-apply').on('click', function() {
         $('.listing--actions').removeClass('is--active');
     }); */

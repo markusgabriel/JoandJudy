@@ -4,9 +4,9 @@
 
         {* Sidebar navigation headline *}
         {block name="frontend_account_menu_title"}
-            <h2 class="navigation--headline">
+            {*<h2 class="navigation--headline">
                 {s name="AccountHeaderNavigation"}{/s}
-            </h2>
+            </h2>*}
         {/block}
 
         {* Sidebar menu container *}

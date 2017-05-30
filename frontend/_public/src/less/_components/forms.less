@@ -1,5 +1,6 @@
 input[type="text"],
 input[type="email"],
+input[type="tel"],
 input[type="password"] {
 	border-radius: 0;
 	background: none;
@@ -9,6 +10,13 @@ input[type="password"] {
 	text-transform: none;
 	color: @text-color;
 	box-shadow: none;
+}
+
+label {
+	cursor: pointer;
+	&:hover {
+		color: @text-color-dark;
+	}
 }
 
 .js--fancy-select {
@@ -53,12 +61,16 @@ input[type="checkbox"] {
 			width: 18px;
 			height: 18px;
 			border: 1px solid @gray;
+			font-family: "iconfont";
+			text-align: center;
+			line-height: 19px;
 		}
 	}
 	&:checked {
 		+ label {
 			&:before {
 				background-color: @gray-light;
+				content: "\e905";
 			}
 		}
 	}

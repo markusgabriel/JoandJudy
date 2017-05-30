@@ -1,0 +1,149 @@
+.jj--account-menu-container {
+  max-width: 1260px;
+  margin: 0px auto;
+  position: relative;
+  .jj--account-menu-open {
+    position: absolute;
+    top: -35px;
+    right: 27px;
+    font-size: 20px;
+    cursor: pointer;
+    .transition(0.3s);
+    .rotate(0deg);
+    &:hover {
+      i {
+        color: @brand-primary;
+      }
+    }
+    &.is--active {
+      .rotate(45deg);
+    }
+  }
+  .account--menu {
+    border: 0;
+    border-radius: 0;
+    padding: 10px 20px;
+    max-height: 0;
+    overflow: hidden;
+    .transition(0.3s);
+    .navigation--headline {
+      margin: 0px;
+    }
+    .account--menu-container {
+      padding: 10px 0px;
+      .navigation--list {
+        text-align: right;
+        border: 0;
+        li {
+          border: 0;
+          a {
+            padding: 10px;
+          }
+        }
+      }
+    }
+    &.is--active {
+      max-height: 500px;
+    }
+  }
+}
+
+.account--content {
+  max-width: 800px;
+  margin: 0px auto !important;
+  float: none;
+  .panel--title {
+    margin: 0px;
+  }
+  .panel--body {
+    padding: 10px 0px;
+  }
+  .account--info,
+  .account--billing,
+  .account--payment,
+  .account--shipping {
+    width: 100%;
+    float: none;
+  }
+
+  .jj--collapse-panel {
+    .panel--actions {
+      margin: 0px 20px;
+    }
+  }
+  fieldset {
+    border: 0 !important;
+    padding: 0px 20px !important;
+  }
+}
+
+.account--profile {
+  max-width: 800px;
+  margin: 0px auto;
+  float: none;
+  .panel--title {
+    margin: 0px;
+  }
+  .panel--body {
+    padding: 10px 0px;
+  }
+  .profile-password--container,
+  .profile-email--container {
+    width: 100%;
+    float: none;
+  }
+
+  .jj--collapse-panel {
+    .panel--actions,
+    .panel--body {
+      margin: 0px 20px;
+    }
+  }
+  fieldset {
+    border: 0 !important;
+    padding: 0px 20px !important;
+  }
+}
+
+.address--content {
+  .panel--title {
+    margin: 0px;
+  }
+  .panel--body {
+    padding: 10px 0px;
+  }
+  .address--item-content {
+    width: 100% !important;
+    float: none;
+    .panel {
+      float: none;
+    }
+  }
+}
+
+.account--profile {
+  .panel--title {
+    margin: 0px;
+  }
+  .panel--body {
+    padding: 10px 0px;
+  }
+}
+
+.note--overview {
+  .panel--table {
+    border: 0;
+    border-radius: 0;
+    padding: 0px;
+  }
+}
+
+.account--orders-overview {
+  border: 0;
+  .orders--table-header {
+    height: 36px;
+  }
+  .order--repeat {
+    background: none;
+  }
+}
