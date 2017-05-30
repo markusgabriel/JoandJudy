@@ -51,11 +51,11 @@
             {/block}
 
             {block name='frontend_search_category_filter'}
-                {foreach $facets as $facet}
+                {*{foreach $facets as $facet}
                     {if $facet|is_a: 'Shopware\Bundle\SearchBundle\FacetResult\TreeFacetResult' && $facet->getFacetName() === 'category'}
                         {include file="frontend/search/category-filter.tpl" facet=$facet}
                     {/if}
-                {/foreach}
+                {/foreach}*}
             {/block}
 
             {block name="frontend_search_results"}

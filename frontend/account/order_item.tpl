@@ -1,6 +1,24 @@
 {block name="frontend_account_order_item_overview_row"}
     <div class="order--item panel--tr">
 
+        {* Order id *}
+        {block name="frontend_account_order_item_number"}
+                <div class="order--number panel--td column--id is--bold">
+
+                    {block name="frontend_account_order_item_number_label"}
+                            <div class="column--label">
+                                {s name="OrderColumnId" namespace="frontend/account/orders"}{/s}:
+                            </div>
+                    {/block}
+
+                    {block name="frontend_account_order_item_number_value"}
+                            <div class="column--value">
+                                {$offerPosition.ordernumber}
+                            </div>
+                    {/block}
+                </div>
+        {/block}
+
         {* Order date *}
         {block name="frontend_account_order_item_date"}
             <div class="order--date panel--td column--date">
@@ -13,25 +31,7 @@
 
                 {block name="frontend_account_order_item_date_value"}
                     <div class="column--value">
-                        {$offerPosition.datum|date}
-                    </div>
-                {/block}
-            </div>
-        {/block}
-
-        {* Order id *}
-        {block name="frontend_account_order_item_number"}
-            <div class="order--number panel--td column--id is--bold">
-
-                {block name="frontend_account_order_item_number_label"}
-                    <div class="column--label">
-                        {s name="OrderColumnId" namespace="frontend/account/orders"}{/s}:
-                    </div>
-                {/block}
-
-                {block name="frontend_account_order_item_number_value"}
-                    <div class="column--value">
-                        {$offerPosition.ordernumber}
+                        {$offerPosition.datum|date_format:"%Y-%m-%d"}
                     </div>
                 {/block}
             </div>
@@ -104,7 +104,7 @@
                    class="btn is--small"
                    data-collapse-panel="true"
                    data-collapseTarget="#order{$offerPosition.ordernumber}">
-                    {s name="OrderActionSlide"}{/s}
+                    {*{s name="OrderActionSlide"}{/s}*}<i class="jj--icon-plus"></i>
                 </a>
             </div>
         {/block}

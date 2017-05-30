@@ -15,27 +15,6 @@
 
 <div id="login">
 
-    {* New customer *}
-    {block name='frontend_account_login_new'}
-    <div class="grid_10">
-        <h2 class="headingbox_dark largesize">{s name="LoginHeaderNew"}{/s} {$sShopname|escapeHtml}</h2>
-        <div class="inner_container">
-            <p>{s name="LoginInfoNew"}{/s}</p>
-            <form method="post" name="new_customer" class="new_customer_form" action="{url controller='register'}">
-                {if !{config name=NoAccountDisable}}
-                    <div class="checkbox">
-                        <p>
-                            <input type="checkbox" class="chk_noaccount" name="skipLogin" value="1" />
-                            <strong>{s name="LoginLabelNoAccount"}{/s}</strong>
-                        </p>
-                    </div>
-                {/if}
-                <input type="submit" class="button-right large register_now" value="{s name='LoginLinkRegister'}{/s}" />
-            </form>
-        </div>
-    </div>
-    {/block}
-
     {* Existing customer *}
     {block name='frontend_account_login_customer'}
     <div class="grid_10">
@@ -67,6 +46,28 @@
         </div>
     </div>
     {/block}
+
+    {* New customer *}
+    {block name='frontend_account_login_new'}
+        <div class="grid_10">
+            <h2 class="headingbox_dark largesize">{s name="LoginHeaderNew"}{/s} {$sShopname|escapeHtml}</h2>
+            <div class="inner_container">
+                <p>{s name="LoginInfoNew"}{/s}</p>
+                <form method="post" name="new_customer" class="new_customer_form" action="{url controller='register'}">
+                    {if !{config name=NoAccountDisable}}
+                        <div class="checkbox">
+                            <p>
+                                <input type="checkbox" class="chk_noaccount" name="skipLogin" value="1" />
+                                <strong>{s name="LoginLabelNoAccount"}{/s}</strong>
+                            </p>
+                        </div>
+                    {/if}
+                    <input type="submit" class="button-right large register_now" value="{s name='LoginLinkRegister'}{/s}" />
+                </form>
+            </div>
+        </div>
+    {/block}
+
 </div>
 {/block}
 

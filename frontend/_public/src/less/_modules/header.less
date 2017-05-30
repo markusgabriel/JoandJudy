@@ -142,6 +142,7 @@ header.header-main {
 						padding: 0px 20px;
 						height: 60px;
 						border: 0;
+						line-height: 60px;
 						i {
 							.unitize(font-size, 16);
 							color: @brand-primary;
@@ -156,6 +157,9 @@ header.header-main {
 							}
 						}
 					}
+					.close--off-canvas {
+						display: none;
+					}
 				}
 			}
 		}
@@ -164,7 +168,7 @@ header.header-main {
 			text-align: right;
 			position: absolute;
 			top: 0px;
-			right: 60px;
+			right: 40px;
 			padding-right: 10px;
 			background-color: #ffffff;
 			z-index: 8001;
@@ -186,6 +190,9 @@ header.header-main {
 			max-width: 1260px;
 			margin: 0px auto;
 			position: relative;
+			.jj--shop-navigation {
+				right: 60px;
+			}
 		}
 	}
 
@@ -201,7 +208,6 @@ header.header-main {
 
 
 @media screen and (max-width: @phoneLandscapeViewportWidth) {
-	.jj--login-link,
 	.jj--search-link {
 		display: none !important;
 	}

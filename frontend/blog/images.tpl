@@ -19,7 +19,7 @@
 
                     <img srcset="{$sArticle.preview.thumbnails[1].sourceSet}"
                           src="{$sArticle.preview.thumbnails[1].source}"
-                          class="blog--image panel has--border is--rounded"
+                          class="blog--image panel has--border"
                           alt="{$alt}"
                           title="{$alt|truncate:160}"
                           itemprop="image" />

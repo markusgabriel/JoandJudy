@@ -1,4 +1,5 @@
 body {
+	padding-top: 60px;
 	&.menu-open {
 		&:after {
 			content: "";
@@ -12,6 +13,13 @@ body {
 			transition: all 0.3s;
 		}
 	}
+	&.jj--filter-active,
+	&.jj--search-active {
+		overflow: hidden;
+	}
+	@media screen and (min-width: @tabletViewportWidth) {
+		padding-top: 0px;
+	}
 }
 
 .content-main {
@@ -19,10 +27,29 @@ body {
 	max-width: none;
 	margin-top: 0px;
 	.content-main--inner {
-		max-width: 1260px;
 		margin: 0 auto;
 		padding: 0 20px;
+		.is--ctl-register &,
+		.is--ctl-checkout &,
+		.is--ctl-account & {
+			max-width: 1260px;
+		}
 	}
+	@media screen and (max-width: @tabletViewportWidth) {
+		.content-main--inner {
+			padding: 40px 20px;
+		}
+	}
+}
+
+.is--user .content-main--inner {
+	max-width: 1260px;
+}
+
+.newsletter--content {
+	max-width: 1260px;
+	margin: 0 auto;
+	padding: 0 20px;
 }
 
 @media screen and (max-width: @tabletViewportWidth) {
@@ -42,4 +69,8 @@ body {
 	.jj--on-mobile {
 		display: none;
 	}
+}
+
+.jj--text-center {
+	text-align: center;
 }

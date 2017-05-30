@@ -27,11 +27,11 @@
         {block name="frontend_account_downloads_welcome"}
             <div class="account--welcome panel">
                 {block name="frontend_account_downloads_welcome_headline"}
-                    <h1 class="panel--title">{s name="DownloadsHeader"}{/s}</h1>
+                    <h1 class="panel--title jj--headline-center">{s name="DownloadsHeader"}{/s}</h1>
                 {/block}
 
                 {block name="frontend_account_downloads_welcome_content"}
-                    <div class="panel--body is--wide">
+                    <div class="panel--body is--wide jj--text-center">
                         <p>{s name='DownloadsInfoText'}{/s}</p>
                     </div>
                 {/block}

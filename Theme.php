@@ -19,8 +19,13 @@ class Theme extends \Shopware\Components\Theme
     protected $license = 'MIT';
 
     protected $javascript = array(
+        'src/js/swiper.min.js',
         'src/js/jj-affix.js',
         'src/js/jj-functions.js'
+    );
+
+    protected $css = array(
+        'src/css/swiper.min.css'
     );
 
     public function createConfigSets(ArrayCollection $collection)

@@ -8,13 +8,13 @@
     {*{include file='frontend/listing/sidebar.tpl'}*}
 {/block}
 
-{block name="frontend_index_navigation" append}
+{*{block name="frontend_index_navigation" append}
     {if $sCategoryContent.media.source}
         <div class="jj--page-header-banner">
             <img src="{$sCategoryContent.media.source}">
         </div>
     {/if}
-{/block}
+{/block}*}
 
 {* Main content *}
 {block name='frontend_index_content'}

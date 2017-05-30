@@ -13,11 +13,11 @@
         {block name="frontend_account_orders_welcome"}
             <div class="account--welcome panel">
                 {block name="frontend_account_orders_welcome_headline"}
-                    <h1 class="panel--title">{s name="OrdersHeader"}{/s}</h1>
+                    <h1 class="panel--title jj--headline-center">{s name="OrdersHeader"}{/s}</h1>
                 {/block}
 
                 {block name="frontend_account_orders_welcome_content"}
-                    <div class="panel--body is--wide">
+                    <div class="panel--body is--wide jj--text-center">
                         <p>{s name="OrdersWelcomeText"}{/s}</p>
                     </div>
                 {/block}
@@ -40,12 +40,12 @@
                             {block name="frontend_account_orders_table_head"}
                                 <div class="orders--table-header panel--tr">
 
-                                    {block name="frontend_account_orders_table_head_date"}
-                                        <div class="panel--th column--date">{s name="OrderColumnDate"}{/s}</div>
-                                    {/block}
-
                                     {block name="frontend_account_orders_table_head_id"}
                                         <div class="panel--th column--id">{s name="OrderColumnId"}{/s}</div>
+                                    {/block}
+
+                                    {block name="frontend_account_orders_table_head_date"}
+                                        <div class="panel--th column--date">{s name="OrderColumnDate"}{/s}</div>
                                     {/block}
 
                                     {block name="frontend_account_orders_table_head_dispatch"}
