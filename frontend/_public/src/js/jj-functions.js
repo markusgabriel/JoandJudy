@@ -18,6 +18,7 @@
     }); */
 
     StateManager.removePlugin('.tab-menu--product .tab--container', 'swOffcanvasButton', ['xs']);
+    StateManager.addPlugin('.jj--collapse-panel .jj--collapse-header', 'swCollapsePanel', {'contentSiblingSelector': '.jj--collapse-body'}, ['xs', 's', 'm', 'l', 'xl']);
 // StateManager.removePlugin('.tab-menu--cross-selling .tab--header', 'swCollapsePanel', {'contentSiblingSelector': '.tab--content'}, ['xs', 's']);
 // StateManager.addPlugin('.tab-menu--cross-selling', 'swTabMenu', ['xs', 's', 'm', 'l', 'xl']);
 

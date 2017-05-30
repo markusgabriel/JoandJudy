@@ -3,7 +3,6 @@
     {include file='frontend/listing/listing_actions.tpl'}
 {/block}
 
-
 {* Emotion worlds *}
 {block name="frontend_listing_list_promotion"}
     {if $hasEmotion}
@@ -106,4 +105,6 @@
             </div>
         {/block}
     </div>
+
+    <span class="jj--open-filter">{s namespace="frontend/listing" name='JJFilterOpen'}Filter{/s}</span>
 {/block}

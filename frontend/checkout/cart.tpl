@@ -64,13 +64,13 @@
 
                     {* Premium products *}
                     {block name='frontend_checkout_cart_premium'}
-                        {if $sPremiums}
+                        {*{if $sPremiums}
 
-                            {* Actual listing *}
+                            *}{* Actual listing *}{*
                             {block name='frontend_checkout_cart_premium_products'}
                                 {include file='frontend/checkout/premiums.tpl'}
                             {/block}
-                        {/if}
+                        {/if}*}
                     {/block}
 
                     {block name='frontend_checkout_cart_table_actions_bottom'}
