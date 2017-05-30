@@ -9,9 +9,11 @@
     });
     $('.jj--open-filter').on('click', function() {
         $('.listing--actions').addClass('is--active');
+        $('body').addClass('jj--filter-active');
     });
     $('.jj--close-filter').on('click', function() {
         $('.listing--actions').removeClass('is--active');
+        $('body').removeClass('jj--filter-active');
     });
     /* $('.filter--btn-apply').on('click', function() {
         $('.listing--actions').removeClass('is--active');

@@ -62,11 +62,11 @@
                         {block name="frontend_detail_buy_button"}
                             {if $sArticle.sConfigurator && !$activeConfiguratorSelection}
                             <button class="buybox--button block btn is--disabled is--icon-right is--large" disabled="disabled" aria-disabled="true" name="{s name="DetailBuyActionAdd"}{/s}"{if $buy_box_display} style="{$buy_box_display}"{/if}>
-                            <i class="icon--plus3"></i>
+                            <i class="jj--icon-plus"></i>
                             </button>
                             {else}
                             <button class="buybox--button block btn is--primary is--icon-right is--center is--large" name="{s name="DetailBuyActionAdd"}{/s}"{if $buy_box_display} style="{$buy_box_display}"{/if}>
-                            <i class="icon--plus3"></i>
+                            <i class="jj--icon-plus"></i>
                             </button>
                             {/if}
                         {/block}
