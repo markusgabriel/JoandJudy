@@ -11,14 +11,14 @@
 
 {* Back to the shop button *}
 {block name='frontend_index_logo_trusted_shops' append}
-    {*{if $theme.checkoutHeader}
+    {if $theme.checkoutHeader}
         <a href="{url controller='index'}"
            class="btn is--small btn--back-top-shop is--icon-left"
            title="{"{s name='FinishButtonBackToShop' namespace='frontend/checkout/finish'}{/s}"|escape}">
             <i class="icon--arrow-left"></i>
             {s name="FinishButtonBackToShop" namespace="frontend/checkout/finish"}{/s}
         </a>
-    {/if}*}
+    {/if}
 {/block}
 
 {* Hide sidebar left *}
@@ -33,9 +33,6 @@
 
 {* Step box *}
 {block name='frontend_index_navigation_categories_top'}
-    <div class="jj--page-header-banner">
-        <img src="{s name="JJAccountHeaderBanner" namespace="JJHeaderBanner"}{/s}">
-    </div>
     {if !$theme.checkoutHeader}
         {$smarty.block.parent}
     {/if}
