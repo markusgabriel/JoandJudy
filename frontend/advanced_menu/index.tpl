@@ -49,7 +49,7 @@
 
             <div class="menu--container">
                 {block name="frontend_plugins_advanced_menu_main_container"}
-                    <div class="button-container">
+                    <div class="button-container {$mainCategory.attribute.attribute1}">
                         {block name="frontend_plugins_advanced_menu_button_category"}
                             <a href="{$link|escapeHtml}" class="button--category" title="{s name="toCategoryBtn" namespace="frontend/plugins/advanced_menu/advanced_menu"}{/s}{$mainCategory.name|escape:'html'}">
                                 {$mainCategory.name}
