@@ -8,7 +8,6 @@
 
 		.button-container {
 			padding: 0;
-			text-align: center;
 			background-color: transparent;
 			.button--category {
 				padding: 10px !important;
@@ -16,7 +15,8 @@
 				font-weight: 300;
 				font-family: "Muli", sans-serif;
 				text-transform: uppercase;
-				color: @gray-dark;
+				color: @brand-primary;
+				pointer-events: none;
 				&:hover {
 					color: @brand-primary;
 				}
@@ -27,8 +27,8 @@
 			.menu--list {
 				column-count: 1 !important;
 				padding: 0 !important;
-				max-height: 0;
-				overflow: hidden;
+				//max-height: 0;
+				//overflow: hidden;
 				transition: 0.5s;
 				.menu--list-item {
 					a {
@@ -46,18 +46,6 @@
 						padding-bottom: 0px !important;
 					}
 				}
-				&:hover {
-					max-height: 500px;
-				}
-			}
-		}
-		.button-container {
-			&:hover {
-				+ .content--wrapper {
-					.menu--list {
-						max-height: 500px;
-					}
-				}
 			}
 		}
 	}
@@ -67,6 +55,30 @@
 			.button-container {
 				.button--category {
 					//pointer-events: none;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: @tabletViewportWidth) {
+		.menu--container {
+			.content--wrapper {
+				.menu--list {
+					max-height: 0;
+					overflow: hidden;
+					&.is--active {
+						max-height: 500px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (min-width: @tabletViewportWidth) {
+		.menu--container {
+			.button-container {
+				.button--category {
+					pointer-events: none;
 				}
 			}
 		}

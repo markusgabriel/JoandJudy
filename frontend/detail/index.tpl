@@ -108,14 +108,6 @@
                                     </div>
                                 {/block}
 
-                                {block name="frontend_detail_index_detail"}
-                                    {* Tab navigation *}
-                                    {block name="frontend_detail_index_tabs"}
-                                        {include file="frontend/detail/tabs.tpl"}
-                                    {/block}
-                                {/block}
-
-
                                 {* Include buy button and quantity box *}
                                 {block name="frontend_detail_index_buybox"}
                                     {include file="frontend/detail/buy.tpl"}
@@ -126,6 +118,13 @@
                                     <nav class="product--actions">
                                         {include file="frontend/detail/actions.tpl"}
                                     </nav>
+                                {/block}
+
+                                {block name="frontend_detail_index_detail"}
+                                    {* Tab navigation *}
+                                    {block name="frontend_detail_index_tabs"}
+                                        {include file="frontend/detail/tabs.tpl"}
+                                    {/block}
                                 {/block}
 
                             </div>

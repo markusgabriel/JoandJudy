@@ -176,6 +176,7 @@ header.header-main {
 			background-color: #ffffff;
 			z-index: 8001;
 			width: 300px;
+			display: none;
 			li {
 				line-height: 60px;
 				padding: 0px 20px;
@@ -195,6 +196,9 @@ header.header-main {
 			position: relative;
 			.jj--shop-navigation {
 				right: 60px;
+			}
+			.jj--shop-navigation {
+				display: block;
 			}
 		}
 	}
@@ -230,21 +234,20 @@ header.header-main {
 		right: 0px;
 		width: 100%;
 		z-index: 9997;
-		padding: 60px 20px;
+		padding: 20px;
 		background-color: #fff;
-		transform: translateY(-100%);
+		transform: translateY(-200%);
 		transition: all 0.3s ease-out;
 		&.is-active {
 			transform: translateY(0);
+			overflow-y: auto;
 		}
 		.jj--navigation-main {
 			border: 0px;
 			ul {
-				text-align: center;
 				li {
 					display: block;
 					.navigation--link {
-						text-align: center;
 						color: @brand-primary;
 						display: block;
 						padding: 10px;

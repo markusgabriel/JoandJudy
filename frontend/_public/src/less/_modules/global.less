@@ -1,5 +1,8 @@
 body {
 	padding-top: 60px;
+	&.menu-open {
+		overflow: hidden;
+	}
 	/*&.menu-open {
 		&:after {
 			content: "";
@@ -39,6 +42,9 @@ body {
 	@media screen and (max-width: @tabletViewportWidth) {
 		.content-main--inner {
 			padding: 40px 20px;
+			.is--ctl-detail & {
+				padding-top: 0px;
+			}
 		}
 	}
 }

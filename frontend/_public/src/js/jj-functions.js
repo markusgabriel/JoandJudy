@@ -27,6 +27,9 @@
         $('.jj--search-container').removeClass('is--active');
         $('body').removeClass('jj--search-active');
     });
+    $('.menu--container').on('click', function() {
+        $(this).find('.menu--list').toggleClass('is--active');
+    });
     /* $('.cart--link').on('click', function() {
         $(this).hide();
         $(this).next('.close--off-canvas').show();

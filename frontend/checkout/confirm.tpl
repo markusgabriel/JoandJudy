@@ -699,8 +699,8 @@
                                         {s name='ConfirmDoPayment'}{/s}<i class="icon--arrow-right"></i>
                                     </button>
                                 {else}
-                                    <button type="submit" class="btn is--primary is--large right" form="confirm--form" data-preloader-button="true">
-                                        {s name='ConfirmActionSubmit'}{/s}
+                                    <button type="submit" class="btn is--primary is--large right is--icon-right" form="confirm--form" data-preloader-button="true">
+                                        {s name='ConfirmActionSubmit'}{/s}<i class="icon--arrow-right"></i>
                                     </button>
                                 {/if}
                             {/block}
