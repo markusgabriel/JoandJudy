@@ -143,6 +143,9 @@ header.header-main {
 						height: 60px;
 						border: 0;
 						line-height: 60px;
+						@media screen and (max-width: @phoneLandscapeViewportWidth) {
+							padding: 0px 40px !important;
+						}
 						i {
 							.unitize(font-size, 16);
 							color: @brand-primary;
@@ -274,6 +277,19 @@ header.header-main {
 }
 
 .jj--page-header-banner {
+	img {
+		width: 100%;
+		height: 260px;
+		.object-fit(cover, top);
+	}
+	.is--ctl-detail &,
+	.is--ctl-checkout &,
+	.is--ctl-register & {
+		display: none;
+	}
+}
+
+.jj--page-header-banner-checkout {
 	img {
 		width: 100%;
 		height: 260px;

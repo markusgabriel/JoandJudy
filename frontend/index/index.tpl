@@ -81,6 +81,14 @@
         <div class="jj--page-header-banner">
             <img src="{$sCategoryContent.media.source}">
         </div>
+    {elseif $sCustomPage.attribute.jj_page_banner}
+        <div class="jj--page-header-banner">
+            <img src="{$sCustomPage.attribute.jj_page_banner}">
+        </div>
+    {else}
+        <div class="jj--page-header-banner">
+            <img src="{s name="JJFallbackHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+        </div>
     {/if}
 
     {* Search form *}

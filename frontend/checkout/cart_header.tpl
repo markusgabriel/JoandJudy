@@ -8,6 +8,13 @@
             </div>
         {/block}
 
+        {* Product Shipping *}
+        {block name='frontend_checkout_cart_header_shippingtime'}
+            <div class="panel--th column--shippingtime block is--align-right">
+                {s name="DetailDataShippingtime" namespace="frontend/plugins/index/delivery_informations"}{/s}
+            </div>
+        {/block}
+
         {* Product quantity *}
         {block name='frontend_checkout_cart_header_quantity'}
             <div class="panel--th column--quantity block is--align-right">

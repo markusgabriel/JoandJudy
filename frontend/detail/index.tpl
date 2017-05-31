@@ -5,6 +5,8 @@
     {include file="frontend/detail/header.tpl"}
 {/block}
 
+{block name="frontend_index_breadcrumb_content"}{/block}
+
 {* Main content *}
 {block name='frontend_index_content'}
     <div class="content product--details" itemscope itemtype="http://schema.org/Product"{if !{config name=disableArticleNavigation}} data-product-navigation="{url module="widgets" controller="listing" action="productNavigation"}" data-category-id="{$sArticle.categoryID}" data-main-ordernumber="{$sArticle.mainVariantNumber}"{/if} data-ajax-wishlist="true" data-compare-ajax="true"{if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if}>

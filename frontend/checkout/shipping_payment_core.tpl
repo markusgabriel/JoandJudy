@@ -8,9 +8,9 @@
 
         {* Action top *}
         {block name='frontend_checkout_shipping_payment_core_buttons'}
-            <div class="confirm--actions table--actions block">
+            {*<div class="confirm--actions table--actions block">
                 <button type="submit" class="btn is--primary is--icon-right is--large right main--actions">{s namespace='frontend/checkout/shipping_payment' name='NextButton'}{/s}<i class="icon--arrow-right"></i></button>
-            </div>
+            </div>*}
         {/block}
 
         {* Payment and shipping information *}
@@ -50,6 +50,6 @@
 
     {* Benefit and services footer *}
     {block name="frontend_checkout_footer"}
-        {include file="frontend/checkout/table_footer.tpl"}
+        {*{include file="frontend/checkout/table_footer.tpl"}*}
     {/block}
 </div>

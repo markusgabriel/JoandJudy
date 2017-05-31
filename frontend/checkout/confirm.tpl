@@ -32,6 +32,9 @@
 
 {* Step box *}
 {block name='frontend_index_navigation_categories_top'}
+    <div class="jj--page-header-banner">
+        <img src="{s name="JJAccountHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+    </div>
     {if !$theme.checkoutHeader}
         {$smarty.block.parent}
     {/if}
@@ -696,8 +699,8 @@
                                         {s name='ConfirmDoPayment'}{/s}<i class="icon--arrow-right"></i>
                                     </button>
                                 {else}
-                                    <button type="submit" class="btn is--primary is--large right is--icon-right" form="confirm--form" data-preloader-button="true">
-                                        {s name='ConfirmActionSubmit'}{/s}<i class="icon--arrow-right"></i>
+                                    <button type="submit" class="btn is--primary is--large right" form="confirm--form" data-preloader-button="true">
+                                        {s name='ConfirmActionSubmit'}{/s}
                                     </button>
                                 {/if}
                             {/block}
