@@ -18,7 +18,7 @@ class Theme extends \Shopware\Components\Theme
 
     protected $license = 'MIT';
 
-    /*protected $javascript = array(
+    protected $javascript = array(
         'src/js/TweenMax.min.js',
         'src/js/ScrollMagic.min.js',
         'src/js/animation.gsap.min.js',
@@ -26,7 +26,7 @@ class Theme extends \Shopware\Components\Theme
         'src/js/swiper.min.js',
         'src/js/jj-affix.js',
         'src/js/jj-functions.js'
-    );*/
+    );
 
     protected $css = array(
         'src/css/swiper.min.css'
