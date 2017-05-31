@@ -94,8 +94,8 @@
     {* Search form *}
     {block name='frontend_index_search'}
         <div class="jj--search-container">
-            <div class="jj--search-header-banner">
-                <img src="{s name="JJSearchHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+            <div class="jj--search-header-banner jj--header-parallax">
+                <img src="{s name="JJFallbackHeaderBanner" namespace="JJHeaderBanner"}{/s}">
             </div>
             <div class="jj--close-search"><i class="jj--icon-close"></i></div>
             <div class="jj--search-form" role="menuitem" data-search="true" aria-haspopup="true"{if $theme.focusSearch && {controllerName|lower} == 'index'} data-activeOnStart="true"{/if}>

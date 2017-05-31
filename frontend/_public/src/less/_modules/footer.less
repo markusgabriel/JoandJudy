@@ -11,7 +11,7 @@
 				.unitize(font-size, 14);
 			}
 			.newsletter--form {
-				width: 400px;
+				width: 320px;
 				max-width: 90%;
 				margin: 0px auto;
 				.newsletter--field,
@@ -28,6 +28,12 @@
 					&:hover {
 						color: @brand-primary;
 					}
+				}
+				.newsletter--field{
+					width: 80%;
+				}
+				.newsletter--button {
+					width: 60px;
 				}
 			}
 		}
@@ -74,6 +80,13 @@
 				&:hover {
 					color: @brand-primary;
 				}
+			}
+			@media screen and (max-width: @tabletViewportWidth) {
+				text-align: right;
+				top: 15px;
+				right: 10px;
+				left: auto;
+				margin-left: 0;
 			}
 		}
 	}

@@ -42,8 +42,11 @@
           padding: 15px 10px;
           z-index: 1000;
           height: 30%;
-          .opacity(0);
+          .opacity(1);
           .transition(all 0.3s);
+          @media screen and (min-width: @tabletViewportWidth) {
+            .opacity(0);
+          }
           .product--title {
             font-weight: 300;
             height: auto;
