@@ -78,15 +78,15 @@
     {/block}
 
     {if $sCategoryContent.media.source}
-        <div class="jj--page-header-banner">
+        <div class="jj--page-header-banner jj--header-parallax">
             <img src="{$sCategoryContent.media.source}">
         </div>
     {elseif $sCustomPage.attribute.jj_page_banner}
-        <div class="jj--page-header-banner">
+        <div class="jj--page-header-banner jj--header-parallax">
             <img src="{$sCustomPage.attribute.jj_page_banner}">
         </div>
     {else}
-        <div class="jj--page-header-banner">
+        <div class="jj--page-header-banner jj--header-parallax">
             <img src="{s name="JJFallbackHeaderBanner" namespace="JJHeaderBanner"}{/s}">
         </div>
     {/if}
@@ -94,6 +94,9 @@
     {* Search form *}
     {block name='frontend_index_search'}
         <div class="jj--search-container">
+            <div class="jj--search-header-banner">
+                <img src="{s name="JJSearchHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+            </div>
             <div class="jj--close-search"><i class="jj--icon-close"></i></div>
             <div class="jj--search-form" role="menuitem" data-search="true" aria-haspopup="true"{if $theme.focusSearch && {controllerName|lower} == 'index'} data-activeOnStart="true"{/if}>
                 <a class="btn entry--link entry--trigger" href="#show-hide--search" title="{"{s namespace='frontend/index/search' name="IndexTitleSearchToggle"}{/s}"|escape}">

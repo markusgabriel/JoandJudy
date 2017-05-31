@@ -14,7 +14,7 @@ header.header-main {
 	.inner {
 
 		.jj--logo-link {
-			background-image: url(../../img/jj_logo.svg);
+			background-image: url(../../img/jj--logo.svg);
 			text-indent: -9999px;
 			width: 118px;
 			height: 18px;
@@ -277,6 +277,9 @@ header.header-main {
 }
 
 .jj--page-header-banner {
+	.translate(0,0);
+	position: relative;
+	z-index: -1;
 	img {
 		width: 100%;
 		height: 260px;
@@ -290,6 +293,16 @@ header.header-main {
 }
 
 .jj--page-header-banner-checkout {
+	img {
+		width: 100%;
+		height: 260px;
+		.object-fit(cover, top);
+	}
+}
+
+.jj--search-header-banner {
+	width: 100%;
+	height: 260px;
 	img {
 		width: 100%;
 		height: 260px;

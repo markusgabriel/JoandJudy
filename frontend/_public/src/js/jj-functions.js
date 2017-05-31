@@ -75,10 +75,15 @@
                 $(window).trigger('scroll');
             });
         }
-    });
 
-    var blogSlider = new Swiper('.jj--blog-slider', {
-        speed: 500,
-        nextButton: '.swiper-button-next',
-        prevButton: '.swiper-button-prev',
+        var controller = new ScrollMagic.Controller();
+        var scene = new ScrollMagic.Scene({triggerHook: 'onEnter', duration: 500})
+            .setTween('.jj--header-parallax', 1, {transform: 'translateY(100px)'})
+            .addTo(controller);
+
+        var blogSlider = new Swiper('.jj--blog-slider', {
+            speed: 500,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+        });
     });
