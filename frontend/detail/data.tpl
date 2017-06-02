@@ -21,7 +21,7 @@
                         {* Price - Starting from *}
                         {block name='frontend_detail_data_price_configurator_starting_from_content'}
                             <span class="price--content content--starting-from">
-                                {s name="DetailDataInfoFrom"}{/s} {$sArticle.priceStartingFrom|currency} {s name="Star" namespace="frontend/listing/box_article"}{/s}
+                                {s name="DetailDataInfoFrom"}{/s} {$sArticle.priceStartingFrom|currency}
                             </span>
                         {/block}
                     {else}
@@ -29,7 +29,7 @@
                         {block name='frontend_detail_data_price_default'}
                             <span class="price--content content--default">
                                 <meta itemprop="price" content="{$sArticle.price|replace:',':'.'}">
-                                {if $sArticle.priceStartingFrom && !$sArticle.liveshoppingData}{s name='ListingBoxArticleStartsAt' namespace="frontend/listing/box_article"}{/s} {/if}{$sArticle.price|currency} {s name="Star" namespace="frontend/listing/box_article"}{/s}
+                                {if $sArticle.priceStartingFrom && !$sArticle.liveshoppingData}{s name='ListingBoxArticleStartsAt' namespace="frontend/listing/box_article"}{/s} {/if}{$sArticle.price|currency}
                             </span>
                         {/block}
                     {/if}
@@ -53,7 +53,7 @@
                                     {s name="priceDiscountLabel"}{/s}
                                 {/block}
 
-                                <span class="price--line-through">{$sArticle.pseudoprice|currency} {s name="Star" namespace="frontend/listing/box_article"}{/s}</span>
+                                <span class="price--line-through">{$sArticle.pseudoprice|currency}</span>
 
                                 {block name='frontend_detail_data_pseudo_price_discount_after'}
                                     {s name="priceDiscountInfo"}{/s}
@@ -94,7 +94,7 @@
 
                         {* Reference unit price content *}
                         {block name='frontend_detail_data_price_unit_reference_content'}
-                            ({$sArticle.referenceprice|currency} {s name="Star" namespace="frontend/listing/box_article"}{/s}
+                            ({$sArticle.referenceprice|currency}
                             / {$sArticle.referenceunit} {$sArticle.sUnit.description})
                         {/block}
                     {/if}

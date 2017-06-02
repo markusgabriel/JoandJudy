@@ -8,18 +8,22 @@
 			padding: 20px !important;
 			text-transform: uppercase !important;
 			cursor: pointer !important;
-			letter-spacing: 1px !important;
-			color: @gray !important;
-			&:hover {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
-			}
-			&.active {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
-			}
-			a.active {
-				text-decoration: underline;
+			a {
+				letter-spacing: 3px !important;
+				font-weight: 300;
+				.unitize(font-size, 18);
+				color: @gray !important;
+				&:hover {
+					color: @brand-primary !important;
+					text-decoration: underline !important;
+				}
+				&.active {
+					color: @brand-primary !important;
+					text-decoration: underline !important;
+				}
+				&.active {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -45,8 +49,7 @@
 						letter-spacing: 1px;
 						line-height: 180%;
 						.unitize(font-size, 16);
-						padding: 20px 20px 10px 20px;
-						height: 30%;
+						padding: 20px 20px 15px 20px;
 						text-align: left;
 						.transition(0.3s);
 						.opacity(0);
@@ -125,6 +128,7 @@
 					position: relative;
 					padding-top: 40px;
 					figcaption {
+						font-family: "Cormorant Garamond", serif;
 						position: absolute;
 						bottom: auto;
 						right: 0;
@@ -132,8 +136,8 @@
 						top: 0;
 						color: @text-color-dark;
 						letter-spacing: 1px;
-						line-height: 180%;
-						.unitize(font-size, 24);
+						line-height: 160%;
+						.unitize(font-size, 32);
 						padding: 0px 20px 10px 20px;
 						height: auto;
 						width: 50%;
@@ -171,18 +175,22 @@
 			padding: 10px !important;
 			text-transform: uppercase !important;
 			cursor: pointer !important;
-			letter-spacing: 1px !important;
-			color: @gray !important;
-			&:hover {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
-			}
-			&.active {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
-			}
-			a.active {
-				text-decoration: underline;
+			a {
+				letter-spacing: 3px !important;
+				font-weight: 300;
+				.unitize(font-size, 16);
+				color: @gray !important;
+				&:hover {
+					color: @brand-primary !important;
+					text-decoration: underline !important;
+				}
+				&.active {
+					color: @brand-primary !important;
+					text-decoration: underline !important;
+				}
+				&.active {
+					text-decoration: underline;
+				}
 			}
 		}
 	}
@@ -208,7 +216,7 @@
 					letter-spacing: 1px;
 					line-height: 180%;
 					.unitize(font-size, 16);
-					padding: 20px 20px 10px 20px;
+					padding: 20px 20px 15px 20px;
 					text-align: left;
 				}
 			}
@@ -272,6 +280,7 @@
 					position: relative;
 					padding-top: 40px;
 					figcaption {
+						font-family: "Cormorant Garamond", serif;
 						position: absolute;
 						bottom: auto;
 						right: 0;
@@ -279,8 +288,8 @@
 						top: 0;
 						color: @text-color-dark;
 						letter-spacing: 1px;
-						line-height: 180%;
-						.unitize(font-size, 18);
+						line-height: 160%;
+						.unitize(font-size, 24);
 						padding: 0px 20px 10px 20px;
 						height: auto;
 						width: 50%;
