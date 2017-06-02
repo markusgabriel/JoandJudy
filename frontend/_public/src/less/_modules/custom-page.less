@@ -2,9 +2,12 @@
   max-width: 1260px;
   margin: 0px auto;
   float: none;
-  padding: 20px;
+  padding: 0px;
   h1 {
     text-align: center;
     color: @gray;
+  }
+  @media screen and (min-width: @tabletViewportWidth) {
+    padding: 20px;
   }
 }
