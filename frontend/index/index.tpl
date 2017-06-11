@@ -4,7 +4,7 @@
 {block name='frontend_index_content_left'}{/block}
 
 {block name='frontend_index_navigation'}
-    <header class="header-main">
+    <header class="header-main jj--header-parallax">
         <div class="inner">
 
             <div class="jj--menu-open">
