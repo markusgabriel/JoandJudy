@@ -32,6 +32,9 @@
 
 {* Step box *}
 {block name='frontend_index_navigation_categories_top'}
+    <div class="jj--page-header-banner">
+        <img src="{s name="JJAccountHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+    </div>
     {if !$theme.checkoutHeader}
         {$smarty.block.parent}
     {/if}

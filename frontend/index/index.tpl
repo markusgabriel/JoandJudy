@@ -36,19 +36,21 @@
             {/block}
 
             <ul class="jj--shop-navigation">
-                <li class="jj--login-link">
-                    <a href="{url controller='account' action='index'}" title="Account">{if !$sUserLoggedIn}<i class="icon--users"></i>{else}<i class="icon--account"></i>{/if}</a>
-                </li>
-                {*{if !$sUserLoggedIn}
+                {if $sUserLoggedIn}
                     <li class="jj--login-link">
-                        *}{*<a href="{if !$sUserLoggedIn}{url controller='account' action='login'}{else}{url controller='account' action='logout'}{/if}" title="{if !$sUserLoggedIn}Login{else}Logout{/if}">{if !$sUserLoggedIn}Login{else}Logout{/if}</a>*}{*
-                        <a href="{url controller='account' action='login'}" title="Login">Login</a>
+                        <a href="{url controller='account' action='index'}" title="Account">
+                            {*{s name='JJAccountHeaderWelcome'}Hello{/s} {$sUserData.additional.user.firstname|escapeHtml}*}
+                            My Account
+                        </a>
                     </li>
-                {else}
-                    <li>
-                        <a href="{url controller='account' action='index'}" title="Account">{s name='JJAccountHeaderWelcome'}Hello{/s} {$sUserData.additional.user.firstname|escapeHtml}</a>
+                {/if}
+                {if !$sUserLoggedIn}
+                    <li class="jj--login-link">
+                        <a href="{url controller='account' action='login'}" title="Login">
+                            Login
+                        </a>
                     </li>
-                {/if}*}
+                {/if}
                 <li class="jj--search-link">
                     <span class="jj--open-search"><i class="jj--icon-lupe"></i></span>
                 </li>
@@ -78,14 +80,25 @@
     {/block}
 
     {if $sCategoryContent.media.source}
-        <div class="jj--page-header-banner">
+        <div class="jj--page-header-banner jj--header-parallax">
             <img src="{$sCategoryContent.media.source}">
+        </div>
+    {elseif $sCustomPage.attribute.jj_page_banner}
+        <div class="jj--page-header-banner jj--header-parallax">
+            <img src="{$sCustomPage.attribute.jj_page_banner}">
+        </div>
+    {else}
+        <div class="jj--page-header-banner jj--header-parallax">
+            <img src="{s name="JJFallbackHeaderBanner" namespace="JJHeaderBanner"}{/s}">
         </div>
     {/if}
 
     {* Search form *}
     {block name='frontend_index_search'}
         <div class="jj--search-container">
+            <div class="jj--search-header-banner jj--header-parallax">
+                <img src="{s name="JJFallbackHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+            </div>
             <div class="jj--close-search"><i class="jj--icon-close"></i></div>
             <div class="jj--search-form" role="menuitem" data-search="true" aria-haspopup="true"{if $theme.focusSearch && {controllerName|lower} == 'index'} data-activeOnStart="true"{/if}>
                 <a class="btn entry--link entry--trigger" href="#show-hide--search" title="{"{s namespace='frontend/index/search' name="IndexTitleSearchToggle"}{/s}"|escape}">

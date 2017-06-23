@@ -4,8 +4,10 @@
   float: none;
   margin: 20px auto;
   @media screen and (min-width: @tabletViewportWidth) {
-    width: 50%;
-    margin: 100px auto;
+    width: 49%;
+    margin: 0px auto;
+    display: inline-block;
+    vertical-align: top;
   }
 }
 
@@ -26,13 +28,72 @@
     }
   }
 
+  .register--privacy {
+    padding: 0;
+    margin: 0;
+    border: 0;
+  }
+
   @media screen and (min-width: @tabletViewportWidth) {
     width: 50%;
-    margin: 100px auto;
+    margin: 0px auto;
+    display: inline-block;
   }
 }
 
 .jj--open-register {
   display: block;
   margin: 10px 0px;
+}
+
+.register--content,
+.register--login,
+.confirm--content {
+  .panel {
+    .panel--title {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .panel--body {
+      padding: 20px 0;
+    }
+  }
+  .register--required-info {
+    margin: 20px 0;
+  }
+  .register--action {
+    margin: 20px 0;
+  }
+}
+
+.register--content .register--check {
+  position: relative;
+  height: 40px;
+  padding: 10px 0;
+  input {
+    position: absolute;
+    top: 10px;
+    left: 0;
+  }
+}
+
+.register--login {
+  .register--new-customer {
+    .new-customer-btn {
+      padding-right: 0;
+    }
+  }
+  .register--existing-customer {
+    .panel--title {
+      margin: 0;
+      text-transform: uppercase;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    .panel--body {
+      padding: 20px 0;
+    }
+  }
 }

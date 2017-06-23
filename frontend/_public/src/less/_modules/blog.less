@@ -60,7 +60,7 @@
       }
       .blog--box-headline {
         font-family: "Cormorant Garamond", serif;
-        .unitize(font-size, 24);
+        .unitize(font-size, 24) !important;
         text-transform: none;
         padding: 0;
         font-weight: 300;
@@ -100,10 +100,14 @@
       .flex-display(flex);
       .align-items(stretch);
       .flex-wrap(wrap);
+      .justify-content(center);
     }
     .blog--box {
       .flex(0 0 50%);
       padding: 40px 0 20px;
+      .flex-display(flex);
+      .flex-direction(column);
+      .justify-content(flex-end);
       .blog--box-headline {
         position: relative !important;
         top: auto !important;
@@ -166,7 +170,7 @@
           width: 80%;
           margin-left: -37%;
           padding-right: 35%;
-          .unitize(font-size, 44);
+          .unitize(font-size, 44) !important;
           font-weight: bold;
           text-transform: none;
           letter-spacing: 1px;
@@ -221,7 +225,7 @@
       padding-right: 0;
       z-index: 1;
       text-align: left;
-      .unitize(font-size, 32);
+      .unitize(font-size, 32) !important;
       font-weight: bold;
       text-transform: none;
       letter-spacing: 1px;
@@ -286,7 +290,7 @@
         padding-right: 35%;
         z-index: 1;
         text-align: left;
-        .unitize(font-size, 44);
+        .unitize(font-size, 44) !important;
         font-weight: bold;
         text-transform: none;
         letter-spacing: 1px;

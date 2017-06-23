@@ -19,7 +19,7 @@
 
                 {* Search icon *}
                 {block name='frontend_index_search_field_submit_icon'}
-                    <i class="icon--search"></i>
+                    <i class="jj--icon-lupe"></i>
                 {/block}
 
                 {* Search text *}

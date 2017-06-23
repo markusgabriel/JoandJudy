@@ -20,7 +20,7 @@
         {if $sArticle.jj_article_size_tab}
 		{block name="frontend_detail_tabs_size"}
 			<a href="#" class="tab--link" title="" data-tabName="size">
-                {s namespace="frontend/detail" name='JJTabsSizeTitle'}Maße{/s}
+                {s namespace="frontend/detail" name='JJTabsSizeTitle'}Format{/s}
 			</a>
 		{/block}
         {/if}

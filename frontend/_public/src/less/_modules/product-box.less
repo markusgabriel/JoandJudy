@@ -70,7 +70,7 @@
           right: 0px;
           left: 0px;
           top: auto;
-          background-color: rgba(255,255,255,0.8);
+          background-color: rgba(255,255,255,0.7);
           text-align: center;
           padding: 15px;
           z-index: 500;
@@ -163,6 +163,30 @@
       width: 33.3% !important;
       .search--results & {
         width: 50% !important;
+      }
+    }
+  }
+}
+
+.product--box {
+  &.box--slider {
+    width: 100%;
+    .box--content {
+      padding: 0px;
+      border: 0px;
+      .product--badges {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: auto;
+        left: 0px;
+        padding: 20px;
+        .product--badge {
+          float: none;
+          background-color: transparent !important;
+          color: @brand-primary !important;
+          font-weight: 300;
+        }
       }
     }
   }

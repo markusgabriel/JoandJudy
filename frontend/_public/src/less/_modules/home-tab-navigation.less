@@ -8,29 +8,66 @@
 			padding: 20px !important;
 			text-transform: uppercase !important;
 			cursor: pointer !important;
-			letter-spacing: 1px !important;
-			color: @gray !important;
-			&:hover {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
+			a {
+				letter-spacing: 3px !important;
+				font-weight: 300;
+				.unitize(font-size, 18);
+				color: @gray !important;
+				&:hover {
+					color: @brand-primary !important;
+					text-decoration: underline !important;
+				}
+				&.active {
+					color: @brand-primary !important;
+					text-decoration: underline !important;
+				}
+				&.active {
+					text-decoration: underline;
+				}
 			}
-			&.active {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
+		}
+	}
+	@media screen and (max-width: @tabletViewportWidth) {
+		ul {
+			li {
+				margin: 0px !important;
+				padding: 10px !important;
+				a {
+					.unitize(font-size, 16);
+				}
 			}
 		}
 	}
 }
 
+.jj--home-tab-wrapper {
+	@media screen and (min-width: @desktopViewportWidth) {
+		max-width: 1160px;
+	}
+}
 .jj--home-tab-content {
+	width: 100%;
 	.jj--home-tab-newin {
 		> div {
 			text-align: center;
 			a {
+				display: inline-block;
 				figure {
 					display: inline-block;
-					margin: 20px;
 					position: relative;
+					margin: 10px 2px;
+					@media screen and (min-width: @tabletViewportWidth) and (max-width: @tabletLandscapeViewportWidth) {
+						margin: 20px 7px;
+						img {
+							max-width: 350px;
+						}
+					}
+					@media screen and (min-width: @tabletLandscapeViewportWidth) and (max-width: @desktopViewportWidth) {
+						margin: 20px 18px;
+					}
+					@media screen and (min-width: @desktopViewportWidth) {
+						margin: 20px 10px;
+					}
 					figcaption {
 						position: absolute;
 						bottom: 0;
@@ -42,8 +79,7 @@
 						letter-spacing: 1px;
 						line-height: 180%;
 						.unitize(font-size, 16);
-						padding: 20px 20px 10px 20px;
-						height: 30%;
+						padding: 20px 20px 15px 20px;
 						text-align: left;
 						.transition(0.3s);
 						.opacity(0);
@@ -56,6 +92,16 @@
 						}
 					}
 				}
+				&:first-child {
+					figure {
+						margin-left: 0px;
+					}
+				}
+				&:last-child {
+					figure {
+						margin-right: 0px;
+					}
+				}
 			}
 			&.jj--home-tab-text {
 				max-width: 600px;
@@ -66,15 +112,29 @@
 				}
 			}
 		}
+		@media screen and (min-width: @desktopViewportWidth) {
+			> div {
+				&.jj--home-tab-text {
+					max-width: 50%;
+				}
+			}
+		}
 	}
 	.jj--home-tab-collection {
 		> div {
 			text-align: center;
 			a {
+				display: inline-block;
 				figure {
 					display: inline-block;
-					margin: 20px;
 					position: relative;
+					margin: 10px 0px;
+					@media screen and (min-width: @tabletLandscapeViewportWidth) and (max-width: @desktopViewportWidth) {
+						margin: 20px 5px;
+					}
+					@media screen and (min-width: @desktopViewportWidth) {
+						margin: 20px 7px;
+					}
 					figcaption {
 						position: absolute;
 						bottom: 0;
@@ -91,7 +151,7 @@
 						text-align: center;
 						.transition(0.3s);
 						.opacity(0);
-						background-color: rgba(255,255,255,0.8);
+						background-color: rgba(255, 255, 255, 0.8);
 					}
 				}
 				&:hover {
@@ -101,6 +161,16 @@
 						}
 					}
 				}
+				&:first-child {
+					figure {
+						margin-left: 0px;
+					}
+				}
+				&:last-child {
+					figure {
+						margin-right: 0px;
+					}
+				}
 			}
 			&.jj--home-tab-text {
 				max-width: 600px;
@@ -111,17 +181,26 @@
 				}
 			}
 		}
+		@media screen and (min-width: @desktopViewportWidth) {
+			> div {
+				&.jj--home-tab-text {
+					max-width: 50%;
+				}
+			}
+		}
 	}
 	.jj--home-tab-magazine {
 		> div {
 			text-align: center;
 			a {
+				display: inline-block;
 				figure {
 					display: inline-block;
 					margin: 20px;
 					position: relative;
 					padding-top: 40px;
 					figcaption {
+						font-family: "Cormorant Garamond", serif;
 						position: absolute;
 						bottom: auto;
 						right: 0;
@@ -129,8 +208,8 @@
 						top: 0;
 						color: @text-color-dark;
 						letter-spacing: 1px;
-						line-height: 180%;
-						.unitize(font-size, 24);
+						line-height: 160%;
+						.unitize(font-size, 32);
 						padding: 0px 20px 10px 20px;
 						height: auto;
 						width: 50%;
@@ -154,147 +233,38 @@
 				}
 			}
 		}
-	}
-}
-
-
-.jj--home-tab-navigation-mobile {
-	ul {
-		text-align: center !important;
-		margin: 20px auto !important;
-		li {
-			display: inline-block !important;
-			margin: 0px !important;
-			padding: 10px !important;
-			text-transform: uppercase !important;
-			cursor: pointer !important;
-			letter-spacing: 1px !important;
-			color: @gray !important;
-			&:hover {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
-			}
-			&.active {
-				color: @brand-primary !important;
-				text-decoration: underline !important;
-			}
-		}
-	}
-}
-.jj--home-tab-content-mobile {
-	.jj--home-tab-newin {
-		> div {
-			text-align: center;
-			figure {
-				display: inline-block;
-				margin: 1%;
-				position: relative;
-				max-width: 46%;
-				display: inline-block;
-				figcaption {
-					position: absolute;
-					bottom: 0;
-					right: 0;
-					left: 0;
-					top: auto;
-					color: @brand-primary;
-					text-transform: uppercase;
-					letter-spacing: 1px;
-					line-height: 180%;
-					.unitize(font-size, 16);
-					padding: 20px 20px 10px 20px;
-					text-align: left;
+		@media screen and (min-width: @desktopViewportWidth) {
+			> div {
+				&.jj--home-tab-text {
+					max-width: 50%;
 				}
 			}
-			&.jj--home-tab-text {
-				max-width: 600px;
-				margin: 20px auto;
+		}
+		@media screen and (max-width: @tabletViewportWidth) {
+			> div {
 				a {
-					text-transform: uppercase;
-					letter-spacing: 1px;
-				}
-			}
-		}
-	}
-	.jj--home-tab-collection {
-		> div {
-			text-align: left;
-			a {
-				figure {
-					display: inline-block;
-					margin: 1%;
-					max-width: 47%;
-					display: inline-block;
-					position: relative;
-					vertical-align: top;
-					figcaption {
-						position: absolute;
-						bottom: 0;
-						right: 0;
-						left: 0;
-						top: auto;
-						color: @gray;
-						text-transform: uppercase;
-						letter-spacing: 1px;
-						line-height: 180%;
-						.unitize(font-size, 16);
-						padding: 10px 20px;
-						height: auto;
-						text-align: center;
-						background-color: rgba(255,255,255,0.8);
-					}
-				}
-			}
-			.jj--home-tab-text {
-				max-width: 47%;
-				margin: 1%;
-				display: inline-block;
-				a {
-					text-transform: uppercase;
-					letter-spacing: 1px;
-				}
-			}
-		}
-	}
-	.jj--home-tab-magazine {
-		> div {
-			text-align: center;
-			a {
-				figure {
-					display: inline-block;
-					margin: 20px;
-					position: relative;
-					padding-top: 40px;
-					figcaption {
-						position: absolute;
-						bottom: auto;
-						right: 0;
-						left: 0;
-						top: 0;
-						color: @text-color-dark;
-						letter-spacing: 1px;
-						line-height: 180%;
-						.unitize(font-size, 18);
-						padding: 0px 20px 10px 20px;
-						height: auto;
-						width: 50%;
-						text-align: left;
-					}
-				}
-				&:hover {
 					figure {
+						display: inline-block;
+						margin: 10px;
+						position: relative;
+						padding-top: 0px;
 						figcaption {
-							color: @brand-primary;
+							position: relative;
+							text-align: center;
+							bottom: auto;
+							right: 0;
+							left: 0;
+							top: 0;
+							color: @text-color-dark;
+							letter-spacing: 1px;
+							line-height: 140%;
+							.unitize(font-size, 32);
+							padding: 10px 0 0;
+							height: auto;
+							width: 100%;
+							text-align: left;
 						}
 					}
-				}
-			}
-			&.jj--home-tab-text {
-				max-width: 600px;
-				margin: 20px auto;
-				a {
-					text-transform: uppercase;
-					letter-spacing: 1px;
 				}
 			}
 		}

@@ -10,11 +10,12 @@ header.header-main {
 	background-color: #fff;
 	z-index: 9998;
 	border-bottom: 1px solid @gray-light;
+	// .translate(0,0);
 
 	.inner {
 
 		.jj--logo-link {
-			background-image: url(../../img/jj_logo.svg);
+			background-image: url(../../img/jj--logo.svg);
 			text-indent: -9999px;
 			width: 118px;
 			height: 18px;
@@ -42,7 +43,7 @@ header.header-main {
 			span {
 				display: block;
 				position: absolute;
-				height: 2px;
+				height: 1px;
 				width: 100%;
 				opacity: 1;
 				left: 0;
@@ -121,6 +122,14 @@ header.header-main {
 					}
 					.js--fancy-select-trigger {
 						border: 0;
+						i {
+							&:before {
+								font-family: 'iconfont' !important;
+								content: "\e90a" !important;
+								font-size: 1rem !important;
+								vertical-align: -5px;
+							}
+						}
 					}
 				}
 			}
@@ -143,6 +152,9 @@ header.header-main {
 						height: 60px;
 						border: 0;
 						line-height: 60px;
+						@media screen and (max-width: @phoneLandscapeViewportWidth) {
+							padding: 0px 40px !important;
+						}
 						i {
 							.unitize(font-size, 16);
 							color: @brand-primary;
@@ -173,6 +185,7 @@ header.header-main {
 			background-color: #ffffff;
 			z-index: 8001;
 			width: 300px;
+			display: no;
 			li {
 				line-height: 60px;
 				padding: 0px 20px;
@@ -193,6 +206,9 @@ header.header-main {
 			.jj--shop-navigation {
 				right: 60px;
 			}
+			.jj--shop-navigation {
+				display: block;
+			}
 		}
 	}
 
@@ -208,7 +224,8 @@ header.header-main {
 
 
 @media screen and (max-width: @phoneLandscapeViewportWidth) {
-	.jj--search-link {
+	.jj--search-link,
+	.jj--login-link {
 		display: none !important;
 	}
 }
@@ -218,6 +235,7 @@ header.header-main {
 	max-width: 1260px;
 	margin: 0 auto;
 	position: relative;
+	min-height: 100%;
 	.jj--flyout-navigation {
 		box-sizing: border-box;
 		position: fixed;
@@ -227,21 +245,22 @@ header.header-main {
 		right: 0px;
 		width: 100%;
 		z-index: 9997;
-		padding: 60px 20px;
-		background-color: #fff;
-		transform: translateY(-100%);
+		padding: 20px;
+		min-height: 100%;
+		overflow-y: auto;
+		background-color: #fff !important;
+		transform: translateY(-200%);
 		transition: all 0.3s ease-out;
 		&.is-active {
 			transform: translateY(0);
+			overflow-y: auto;
 		}
 		.jj--navigation-main {
 			border: 0px;
 			ul {
-				text-align: center;
 				li {
 					display: block;
 					.navigation--link {
-						text-align: center;
 						color: @brand-primary;
 						display: block;
 						padding: 10px;
@@ -263,20 +282,66 @@ header.header-main {
 	}
 	@media screen and (min-width: @tabletViewportWidth) {
 		.jj--flyout-navigation {
-			position: absolute;
 			top: 0px;
-			left: 0px;
+			left: 20px;
 			bottom: auto;
 			right: auto;
 			width: 300px;
+			overflow-y: auto;
+			min-height: 100%;
+			padding-top: 80px;
 		}
 	}
 }
 
 .jj--page-header-banner {
+	.translate(0,0);
+	position: relative;
+	z-index: -1;
+	margin-top: -60px;
 	img {
 		width: 100%;
+		max-width: 1260px;
+		margin: 0 auto;
+		height: 320px;
+		.object-fit(cover, top);
+	}
+	.is--ctl-detail &,
+	.is--ctl-checkout &,
+	.is--ctl-register & {
+		display: none;
+	}
+}
+
+.jj--page-header-banner-checkout {
+	img {
+		width: 100%;
+		max-width: 1260px;
+		margin: 0 auto;
 		height: 260px;
 		.object-fit(cover, top);
+	}
+}
+
+.jj--search-header-banner {
+	width: 100%;
+	height: 260px;
+	//max-width: 1260px;
+	margin: 0 auto;
+	display: none;
+	img {
+		width: 100%;
+		//max-width: 1260px;
+		margin: 0 auto;
+		height: 260px;
+		.object-fit(cover, top);
+	}
+}
+
+@media screen and (max-width: @tabletViewportWidth) {
+	.jj--page-header-banner,
+	.jj--page-header-banner-checkout,
+	.jj--search-header-banner {
+		display: none;
 	}
 }

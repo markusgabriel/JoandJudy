@@ -54,6 +54,12 @@
     {/if}
 {/block}
 
+{block name='frontend_index_navigation' append}
+    <div class="jj--page-header-banner">
+        <img src="{s name="JJAccountHeaderBanner" namespace="JJHeaderBanner"}{/s}">
+    </div>
+{/block}
+
 {* Main content *}
 {block name="frontend_index_content"}
     <div class="content checkout--content finish--content">

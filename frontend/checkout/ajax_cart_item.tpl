@@ -92,7 +92,7 @@
             {if $basketItem.modus != 4}
                 <form action="{$deleteUrl}" method="post">
                     <button type="submit" class="btn is--small action--remove" title="{s name="AjaxCartRemoveArticle"}{/s}">
-                        <i class="icon--cross"></i>
+                        <i class="jj--icon-close"></i>
                     </button>
                 </form>
             {/if}

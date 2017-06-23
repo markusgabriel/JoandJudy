@@ -7,7 +7,6 @@
         <span class="price--default is--nowrap{if $sArticle.has_pseudoprice} is--discount{/if}">
             {if $sArticle.priceStartingFrom && !$sArticle.liveshoppingData}{s name='ListingBoxArticleStartsAt'}{/s} {/if}
             {$sArticle.price|currency}
-            {s name="Star"}{/s}
         </span>
     {/block}
 
@@ -22,7 +21,6 @@
 
                 <span class="price--discount is--nowrap">
                     {$sArticle.pseudoprice|currency}
-                    {s name="Star"}{/s}
                 </span>
 
                 {block name='frontend_listing_box_article_price_discount_after'}

@@ -16,6 +16,10 @@
 
 {block name='frontend_index_breadcrumb' append}
     <div class="jj--account-menu-container">
+        {* Logout action *}
+        <a href="{url controller='account' action='logout'}" title="{s name="AccountLinkLogout2"}{/s}" class="jj--account-logout link--logout">
+            <i class="icon--logout"></i> {s name="AccountLinkLogout2"}{/s}
+        </a>
         <span class="jj--account-menu-open"><i class="jj--icon-plus"></i></span>
         {block name="frontend_account_sidebar"}
             {include file="frontend/account/sidebar.tpl"}

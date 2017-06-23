@@ -1,10 +1,5 @@
 {extends file="frontend/index/index.tpl"}
 
-{* Breadcrumb *}
-{block name='frontend_index_start' append}
-    {$sBreadcrumb = [['name'=>"{s name='NewsletterTitle'}{/s}", 'link'=>{url}]]}
-{/block}
-
 {* Meta description *}
 {block name='frontend_index_header_meta_description'}{s name='NewsletterMetaDescriptionStandard'}{/s}{/block}
 
@@ -45,7 +40,7 @@
 
         {* Newsletter headline *}
         {block name="frontend_newsletter_headline"}
-            <div class="newsletter--headline panel--body is--wide has--border is--rounded">
+            <div class="newsletter--headline">
                 {block name="frontend_newsletter_headline_title"}
                     <h1 class="newsletter--title">{s name="NewsletterRegisterHeadline"}{/s}</h1>
                 {/block}
@@ -63,13 +58,13 @@
 
                 {* Newsletter headline *}
                 {block name="frontend_newsletter_content_headline"}
-                    <h2 class="panel--title is--underline">{s name="NewsletterRegisterHeadline"}{/s}</h2>
+                    <h2>{s name="NewsletterRegisterHeadline"}{/s}</h2>
                 {/block}
 
                 {* Newsletter form *}
                 {block name="frontend_newsletter_form"}
                     <form action="{url controller='newsletter'}" method="post">
-                        <div class="panel--body is--wide">
+                        <div>
 
                             {* Subscription option *}
                             {block name="frontend_newsletter_form_input_subscription"}

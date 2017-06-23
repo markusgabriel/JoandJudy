@@ -12,10 +12,6 @@
             {/if}
 
             <div class="blog--detail-images block">
-                <a href="{$sArticle.preview.source}"
-                   data-lightbox="true"
-                   title="{$alt}"
-                   class="link--blog-image">
 
                     <img srcset="{$sArticle.preview.thumbnails[1].sourceSet}"
                           src="{$sArticle.preview.thumbnails[1].source}"
@@ -23,7 +19,6 @@
                           alt="{$alt}"
                           title="{$alt|truncate:160}"
                           itemprop="image" />
-                </a>
             </div>
         {/block}
 
@@ -40,16 +35,11 @@
                         {/if}
 
                         {if !$sArticleMedia.preview}
-                            <a href="{$sArticleMedia.source}"
-                               data-lightbox="true"
-                               class="blog--thumbnail panel has--border is--rounded block"
-                               title="{s name="BlogThumbnailText" namespace="frontend/blog/detail"}{/s}: {$alt}">
 
                                <img srcset="{$sArticleMedia.thumbnails[0].sourceSet}"
                                      class="blog--thumbnail-image"
                                      alt="{s name="BlogThumbnailText" namespace="frontend/blog/detail"}{/s}: {$alt}"
                                      title="{s name="BlogThumbnailText" namespace="frontend/blog/detail"}{/s}: {$alt|truncate:160}" />
-                            </a>
                         {/if}
                     {/foreach}
                 </div>

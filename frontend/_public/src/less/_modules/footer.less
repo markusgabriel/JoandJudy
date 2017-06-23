@@ -11,7 +11,7 @@
 				.unitize(font-size, 14);
 			}
 			.newsletter--form {
-				width: 400px;
+				width: 320px;
 				max-width: 90%;
 				margin: 0px auto;
 				.newsletter--field,
@@ -28,6 +28,12 @@
 					&:hover {
 						color: @brand-primary;
 					}
+				}
+				.newsletter--field{
+					width: 70%;
+				}
+				.newsletter--button {
+					width: 60px;
 				}
 			}
 		}
@@ -75,6 +81,13 @@
 					color: @brand-primary;
 				}
 			}
+			@media screen and (max-width: @tabletViewportWidth) {
+				text-align: right;
+				top: 15px;
+				right: 10px;
+				left: auto;
+				margin-left: 0;
+			}
 		}
 	}
 
@@ -82,4 +95,23 @@
 		padding-bottom: 60px;
 	}
 
+}
+
+.footer-minimal {
+	padding: 20px;
+	text-align: left;
+	color: @gray;
+	position: relative;
+	border-top: 1px solid @gray;
+
+	.footer--service-menu {
+		float: right;
+		.service--list {
+			.service--link {
+				padding: 0;
+				text-transform: uppercase;
+				color: @gray;
+			}
+		}
+	}
 }

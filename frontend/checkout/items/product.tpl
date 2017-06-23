@@ -19,7 +19,7 @@
                           method="post">
                         <button type="submit" class="btn column--actions-link"
                                 title="{"{s name='CartItemLinkDelete'}{/s}"|escape}">
-                            <i class="icon--cross"></i>
+                            <i class="jj--icon-close"></i>
                         </button>
                     </form>
                 </div>
@@ -106,6 +106,22 @@
         </div>
     {/block}
 
+    {* Shipping Time *}
+    {block name='frontend_checkout_cart_item_shippingtime'}
+    <div class="panel--td column--shippingtime is--align-right">
+
+        {block name='frontend_checkout_cart_item_shippingtime_label'}
+            <div class="column--label shippingtime--label">
+                {s name="JJCartColumnShippingTime"}Shipping{/s}
+            </div>
+        {/block}
+        {if $sBasketItem.additional_details.shippingtime}
+            {$sBasketItem.additional_details.shippingtime} {s name="DetailDataShippingDays" namespace="frontend/plugins/index/delivery_informations"}{/s}
+        {/if}
+    </div>
+    {/block}
+
+
     {* Product quantity *}
     {block name='frontend_checkout_cart_item_quantity'}
         <div class="panel--td column--quantity is--align-right">
@@ -136,8 +152,22 @@
         </div>
     {/block}
 
+
+
     {* Product unit price *}
-    {block name='frontend_checkout_cart_item_price'}{/block}
+    {block name='frontend_checkout_cart_item_price'}
+        <div class="panel--td column--unit-price is--align-right">
+            {if !$sBasketItem.modus}
+                {block name='frontend_checkout_cart_item_unit_price_label'}
+                    <div class="column--label unit-price--label">
+                        {s name="CartColumnPrice" namespace="frontend/checkout/cart_header"}{/s}
+                    </div>
+                {/block}
+
+                {$sBasketItem.price|currency}{block name='frontend_checkout_cart_tax_symbol'}{s name="Star" namespace="frontend/listing/box_article"}{/s}{/block}
+            {/if}
+        </div>
+    {/block}
 
     {* Product tax rate *}
     {block name='frontend_checkout_cart_item_tax_price'}{/block}

@@ -27,7 +27,7 @@
         {block name='frontend_listing_box_article_unit_reference_content'}
             <span class="is--nowrap">
                 ({$sArticle.referenceprice|currency}
-                {s name="Star"}{/s} / {$sArticle.referenceunit} {$sArticle.sUnit.description})
+                {$sArticle.referenceunit} {$sArticle.sUnit.description})
             </span>
         {/block}
     {/if}

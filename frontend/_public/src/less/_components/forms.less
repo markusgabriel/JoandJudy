@@ -44,6 +44,7 @@ select {
 }
 
 input[type="checkbox"] {
+	display: none;
 	.clear-select();
 	+ label {
 		padding-left: 30px;
@@ -78,7 +79,7 @@ input[type="checkbox"] {
 
 .range-slider {
 	.range-slider--container {
-		height: 3px;
+		height: 2px;
 		border-radius: 0px;
 		border: 0;
 		background-color: @gray;
@@ -89,13 +90,16 @@ input[type="checkbox"] {
 				background: none;
 				background-color: @gray;
 				border: 0;
-				top: -0.55rem;
+				top: -0.45rem;
+				width: 16px;
+				height: 16px;
 			}
 		}
 	}
 	.filter-panel--range-info {
 		label {
-			color: @gray;
+			color: @text-color-dark;
+			font-weight: 300;
 		}
 		label:first-child {
 			float: left;

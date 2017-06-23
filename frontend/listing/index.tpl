@@ -16,6 +16,8 @@
     {/if}
 {/block}*}
 
+{block name="frontend_index_breadcrumb_content"}{/block}
+
 {* Main content *}
 {block name='frontend_index_content'}
 
