@@ -1,11 +1,14 @@
-.jj--sticky-element {
+.jj--sticky-element,
+.jj--sticky-element-detail {
   &.affix-top {
     display: block;
     //position: absolute;
   }
   &.affix {
     display: block;
-    position: fixed !important;
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+      position: fixed !important;
+    }
     // z-index: 9999;
     /*.product--buybox {
       right: 15px !important;
@@ -18,7 +21,8 @@
 }
 
 .is--ctl-listing {
-  .jj--sticky-element {
+  .jj--sticky-element,
+  .jj--sticky-element-detail {
     z-index: 9999;
   }
 }

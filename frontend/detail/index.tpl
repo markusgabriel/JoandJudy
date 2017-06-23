@@ -45,7 +45,7 @@
 
             {* "Buy now" box container *}
             {block name='frontend_detail_index_buy_container'}
-                <div class="jj--sticky-element">
+                <div class="jj--sticky-element-detail">
                     <div class="product--buybox block{if $sArticle.sConfigurator && $sArticle.sConfiguratorSettings.type==2} is--wide{/if}">
 
                         {* Product name *}
