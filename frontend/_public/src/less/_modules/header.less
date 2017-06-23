@@ -10,7 +10,7 @@ header.header-main {
 	background-color: #fff;
 	z-index: 9998;
 	border-bottom: 1px solid @gray-light;
-	.translate(0,0);
+	// .translate(0,0);
 
 	.inner {
 
@@ -122,6 +122,14 @@ header.header-main {
 					}
 					.js--fancy-select-trigger {
 						border: 0;
+						i {
+							&:before {
+								font-family: 'iconfont' !important;
+								content: "\e90a" !important;
+								font-size: 1rem !important;
+								vertical-align: -5px;
+							}
+						}
 					}
 				}
 			}
@@ -216,7 +224,8 @@ header.header-main {
 
 
 @media screen and (max-width: @phoneLandscapeViewportWidth) {
-	.jj--search-link {
+	.jj--search-link,
+	.jj--login-link {
 		display: none !important;
 	}
 }
@@ -284,11 +293,12 @@ header.header-main {
 	.translate(0,0);
 	position: relative;
 	z-index: -1;
+	margin-top: -60px;
 	img {
 		width: 100%;
 		max-width: 1260px;
 		margin: 0 auto;
-		height: 260px;
+		height: 320px;
 		.object-fit(cover, top);
 	}
 	.is--ctl-detail &,
@@ -311,11 +321,12 @@ header.header-main {
 .jj--search-header-banner {
 	width: 100%;
 	height: 260px;
-	max-width: 1260px;
+	//max-width: 1260px;
 	margin: 0 auto;
+	display: none;
 	img {
 		width: 100%;
-		max-width: 1260px;
+		//max-width: 1260px;
 		margin: 0 auto;
 		height: 260px;
 		.object-fit(cover, top);

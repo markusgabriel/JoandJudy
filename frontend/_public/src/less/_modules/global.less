@@ -33,6 +33,7 @@ body {
 	max-width: none;
 	margin-top: 0px;
 	background-color: #FFFFFF;
+	//.translate(0,0);
 	.content-main--inner {
 		margin: 0 auto;
 		padding: 0 20px;
@@ -48,6 +49,22 @@ body {
 			.is--ctl-detail & {
 				padding-top: 0px;
 			}
+		}
+	}
+}
+
+.content--home {
+	.emotion--wrapper {
+		padding-bottom: 20px;
+		margin-bottom: 20px;
+		border-bottom: 1px solid @gray-light;
+		@media screen and (min-width: @tabletViewportWidth) {
+			padding-bottom: 40px;
+			margin-bottom: 40px;
+		}
+		@media screen and (min-width: @desktopViewportWidth) {
+			padding-bottom: 60px;
+			margin-bottom: 60px;
 		}
 	}
 }

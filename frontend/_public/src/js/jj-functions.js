@@ -20,8 +20,8 @@
         $(this).next('.account--menu').toggleClass('is--active');
     });
     $('.jj--open-search').on('click', function() {
-        $('.jj--search-container').addClass('is--active');
-        $('body').addClass('jj--search-active');
+        $('.jj--search-container').toggleClass('is--active');
+        $('body').toggleClass('jj--search-active');
     });
     $('.jj--close-search').on('click', function() {
         $('.jj--search-container').removeClass('is--active');
@@ -40,8 +40,8 @@
 
     StateManager.removePlugin('.tab-menu--product .tab--container', 'swOffcanvasButton', ['xs']);
     StateManager.addPlugin('.jj--collapse-panel .jj--collapse-header', 'swCollapsePanel', {'contentSiblingSelector': '.jj--collapse-body'}, ['xs', 's', 'm', 'l', 'xl']);
-// StateManager.removePlugin('.tab-menu--cross-selling .tab--header', 'swCollapsePanel', {'contentSiblingSelector': '.tab--content'}, ['xs', 's']);
-// StateManager.addPlugin('.tab-menu--cross-selling', 'swTabMenu', ['xs', 's', 'm', 'l', 'xl']);
+    // StateManager.removePlugin('.tab-menu--cross-selling .tab--header', 'swCollapsePanel', {'contentSiblingSelector': '.tab--content'}, ['xs', 's']);
+    // StateManager.addPlugin('.tab-menu--cross-selling', 'swTabMenu', ['xs', 's', 'm', 'l', 'xl']);
 
     $(function() {
         var stickyElement = '.jj--sticky-element',
