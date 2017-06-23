@@ -43,7 +43,7 @@ header.header-main {
 			span {
 				display: block;
 				position: absolute;
-				height: 2px;
+				height: 1px;
 				width: 100%;
 				opacity: 1;
 				left: 0;
@@ -235,6 +235,7 @@ header.header-main {
 	max-width: 1260px;
 	margin: 0 auto;
 	position: relative;
+	min-height: 100%;
 	.jj--flyout-navigation {
 		box-sizing: border-box;
 		position: fixed;
@@ -245,7 +246,9 @@ header.header-main {
 		width: 100%;
 		z-index: 9997;
 		padding: 20px;
-		background-color: #fff;
+		min-height: 100%;
+		overflow-y: auto;
+		background-color: #fff !important;
 		transform: translateY(-200%);
 		transition: all 0.3s ease-out;
 		&.is-active {
@@ -279,12 +282,14 @@ header.header-main {
 	}
 	@media screen and (min-width: @tabletViewportWidth) {
 		.jj--flyout-navigation {
-			position: absolute;
 			top: 0px;
-			left: 0px;
+			left: 20px;
 			bottom: auto;
 			right: auto;
 			width: 300px;
+			overflow-y: auto;
+			min-height: 100%;
+			padding-top: 80px;
 		}
 	}
 }

@@ -2,10 +2,12 @@
         $(this).toggleClass('jj--menu-close');
         $('.jj--flyout-navigation').toggleClass('is-active');
         $('body').toggleClass('menu-open');
+        $('.js--overlay').toggleClass('is--open is--closable');
     });
     $('.jj--menu-close').on('click', function() {
         $('.jj--flyout-navigation').removeClass('is-active');
         $('body').removeClass('menu-open');
+        $('.js--overlay').removeClass('is--open is--closable');
     });
     $('.jj--open-filter').on('click', function() {
         $('.listing--actions').addClass('is--active');

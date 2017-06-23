@@ -7,6 +7,7 @@
   z-index: 1001;
   background-color: #FFFFFF;
   text-align: center;
+  overflow-y: auto;
   padding-top: 60px;
   .transition(0.3s);
   .translate(0,-100%);
@@ -70,15 +71,15 @@
     .transition(0.3s);
     position: absolute;
     top: 50px;
-    width: 100%;
+    width: 40px;
+    left: 50%;
+    margin-left: -20px;
     i {
       .unitize(font-size, 40);
       color: @brand-primary;
     }
     &:hover {
-      i {
-        color: @gray;
-      }
+      .transform(rotate(90deg));
     }
   }
 }
