@@ -19,7 +19,7 @@
                         {* Date *}
                         {block name='frontend_blog_col_meta_data_date'}
                             {if $sArticle.displayDate}
-                                <span class="blog--metadata-date blog--metadata is--nowrap{if !$sArticle.author.name} is--first{/if}">{$sArticle.displayDate|date:"DATETIME_SHORT"}</span>
+                                <span class="blog--metadata-date blog--metadata is--nowrap{if !$sArticle.author.name} is--first{/if}">{$sArticle.displayDate|date_format:"%Y - %m - %d"}</span>
                             {/if}
                         {/block}
 
